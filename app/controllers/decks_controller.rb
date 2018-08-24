@@ -12,10 +12,11 @@ class DecksController < ApplicationController
         @deck = Deck.find(params[:id])
     end
     def new
-        @deck=Deck.create(:user_id => params[:user_id])
+        @deck=Deck.new
     end
     def create
         @deck= Deck.new(deck_params)
+        @deck.user_id=current_user.id
         @deck.wins=0
         @deck.losses=0
         respond_to do |format|

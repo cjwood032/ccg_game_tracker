@@ -6,6 +6,7 @@ class GamesController < ApplicationController
         @game=Game.new
         @decks=current_user.decks
         #@decks=Deck.all
+        binding.pry
     end
     def save
         @game=Game.new(game_params)
