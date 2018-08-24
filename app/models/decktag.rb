@@ -1,0 +1,2 @@
+class DeckTag < ApplicationRecord
+end

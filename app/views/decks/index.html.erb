@@ -1,0 +1,14 @@
+<h2> Your Decks </h2>
+<p><%= link_to 'Play some Games!', games_path %></p>
+<% @decks.each do |deck| %>
+    <div>
+     <td><%= link_to "#{deck.name}", deck_path(deck) %></td>
+    </div>
+  <% end %>
+  <% if @user %>
+  <p>
+    <%= link_to "Back to profile", user_path(@user), {:class => "btn btn-primary"} %>
+  </p>
+<% else %>
+  <p><%= link_to 'New Deck', new_deck_path %></p>
+<% end %>
