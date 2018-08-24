@@ -4,30 +4,30 @@
 
 <div class="center">
 
-  <div class="info">
-  <form action="/games/save" method="post">
-    <div class="form-group">
-        Deck:
-        <%= collection_select(g,:deck, @decks, :name, :name) %>
+
     
+        Deck:
+        <div class="form-check form-check-inline">
+            <%= g.collection_select(:deck, @decks, :id, :name) %>
+        </div>
     
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
-        <select class="custom-select my-1 mr-sm-2" name="g.result">
+        <select class="custom-select my-1 mr-sm-2" name="result">
             <option selected>Choose...</option>
             <option value="Win">Win</option>
             <option value="Loss">Loss</option>
         </select>
     
     <h4>optional:</h4>
-    
-    <b><%= label :opponent_deck, "Opponent's deck" %></b>
-        <%= text_field g, :opponent_deck%></div>
+    <div class="form-check form-check-inline">
+        <b><%= g.label :opponent_deck, "Opponent's deck" %></b>
+            <%= g.text_field :opponent_deck, class: "form-control"%></div>
     
     <label><h4><center>Tags</center></h4></label><br>
     <% Tag.all.each do |tag| %>
       <div class="form-check form-check-inline">
       <label><%= tag.name %></label>
-      <input class="form-check-input" type="checkbox" id="tag_<%=tag.id%>" name="<%= tag.name %>" value="<%= tag.name %>">
+      <input class="form-check-input" type="checkbox" id="tag_<%=tag.id%>" name="<%= tag.name %>" value="true"%>
     	</div>
     <%end%>
     </div>

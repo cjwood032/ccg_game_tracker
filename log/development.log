@@ -12179,3 +12179,2043 @@ Processing by GamesController#index as HTML
 Completed 200 OK in 5849ms (Views: 31.1ms | ActiveRecord: 2.8ms)
 
 
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:36:17 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for GamesController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:36:39 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zUgmWMFT3ARmgbM0KI6Bn/+nc+xysYRCLWEYm8+KaM6rvSAigzF+c1lTqyNtD3oZTGaLKeQV4nmbCn/+t6SGcQ==", "#<ActionView::Helpers::FormBuilder:0x007fa92b661b48>"=>{"deck"=>"HELPME!", "opponent_deck"=>"a"}, "g.result"=>"Loss", "Resource Shortage"=>"Resource Shortage", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 116802ms (ActiveRecord: 0.8ms)
+
+
+  
+SystemExit (exit):
+  
+(pry):4:in `exit'
+(pry):4:in `game_params'
+app/controllers/games_controller.rb:24:in `game_params'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:38:51 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (141.2ms)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `tag' for #<ActionView::Helpers::FormBuilder:0x007fa3cf249648>
+Did you mean?  tap):
+    27:     <% Tag.all.each do |tag| %>
+    28:       <div class="form-check form-check-inline">
+    29:       <label><%= tag.name %></label>
+    30:       <input class="form-check-input" type="checkbox" id="tag_<%=tag.id%>" name="<%= tag.name %>" value="<%= g.tag.id %>">
+    31:     	</div>
+    32:     <%end%>
+    33:     </div>
+  
+app/views/games/index.html.erb:30:in `block (2 levels) in _app_views_games_index_html_erb___884907106997695802_70170753862980'
+app/views/games/index.html.erb:27:in `block in _app_views_games_index_html_erb___884907106997695802_70170753862980'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170753862980'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:39:09 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (101.0ms)
+Completed 500 Internal Server Error in 6770ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `+' for #<ActionView::Helpers::FormBuilder:0x007fa3d0f8c0e8>):
+    27:     <% Tag.all.each do |tag| %>
+    28:       <div class="form-check form-check-inline">
+    29:       <label><%= tag.name %></label>
+    30:       <input class="form-check-input" type="checkbox" id="tag_<%=tag.id%>" name="<%= tag.name %>" value="<%= g+tag.id %>">
+    31:     	</div>
+    32:     <%end%>
+    33:     </div>
+  
+app/views/games/index.html.erb:30:in `block (2 levels) in _app_views_games_index_html_erb___884907106997695802_70170781281620'
+app/views/games/index.html.erb:27:in `block in _app_views_games_index_html_erb___884907106997695802_70170781281620'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170781281620'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:39:32 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 2137ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/views/games/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+...@output_buffer.append=( g"+"tag.id );@output_buffer.safe_app...
+...                               ^):
+  
+app/views/games/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 13:40:38 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 223ms (Views: 218.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:40:42 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 43ms (Views: 20.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:40:43 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zZCKyLIrkqKLEej+ybWXhCvoufkGKGjPG7fVQviSyO2rZYyy8Ekw1bTD8OmMNGwCmClBPJCMDvSt3LIngLwmUg==", "#<ActionView::Helpers::FormBuilder:0x007fa3d26ddbc0>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d26ddbc0>, :g.result
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 9469ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170752939860'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170752939860'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:41:05 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 3294ms (Views: 25.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:41:15 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GpqlQmVEeXfENT05aRu/HEzoLynfdKNEjnmG2/NbxQd8b6M4JybbAPvnJS4smkSa/ynX7EnQxX84EuG+i3UruA==", "#<ActionView::Helpers::FormBuilder:0x007fa3d0bbf3e8>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Win", "Resource Shortage"=>"1", "Resource Excess"=>"2", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d0bbf3e8>, :g.result, :Resource Shortage, :Resource Excess
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 175046ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170765776520'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170765776520'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:44:16 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7351ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:44:45 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FmhzILNZPoGDyGoW+d3uUuoaFTtjb9UZWw6+JVM/cDdwnXVa8Tuc9rwacgG8XBXUWdvt/vXLsyLtZdlAKxGeiA==", "#<ActionView::Helpers::FormBuilder:0x007fa3d5392468>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Loss", "Resource Shortage"=>"true%>", "Opponent Resource Excess"=>"true%>", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d5392468>, :g.result, :Resource Shortage, :Opponent Resource Excess
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 52099ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170817417520'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170817417520'
+app/controllers/games_controller.rb:15:in `block (2 levels) in create'
+app/controllers/games_controller.rb:11:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:46:14 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FmhzILNZPoGDyGoW+d3uUuoaFTtjb9UZWw6+JVM/cDdwnXVa8Tuc9rwacgG8XBXUWdvt/vXLsyLtZdlAKxGeiA==", "#<ActionView::Helpers::FormBuilder:0x007fa3d5392468>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Loss", "Resource Shortage"=>"true%>", "Opponent Resource Excess"=>"true%>", "user_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d5392468>, :g.result, :Resource Shortage, :Opponent Resource Excess
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 7718ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170827972260'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170827972260'
+app/controllers/games_controller.rb:16:in `block (2 levels) in create'
+app/controllers/games_controller.rb:11:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:46:25 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:46:32 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4S0cQyNjwtjRizFx0cTxgEiaUPq+iZnKDhaFJwGKb26H2Bo5YQFgr+5ZKWaURQoG+1uoPygt//G4feJCeaSB0Q==", "#<ActionView::Helpers::FormBuilder:0x007fa3d79f9048>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Loss", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d79f9048>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 113043ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170832790400'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170832790400'
+app/controllers/games_controller.rb:16:in `block (2 levels) in create'
+app/controllers/games_controller.rb:11:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:48:55 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4S0cQyNjwtjRizFx0cTxgEiaUPq+iZnKDhaFJwGKb26H2Bo5YQFgr+5ZKWaURQoG+1uoPygt//G4feJCeaSB0Q==", "#<ActionView::Helpers::FormBuilder:0x007fa3d79f9048>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Loss", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d79f9048>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d79f9048>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d79f9048>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 110007ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170753936300'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170753936300'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:50:53 -0400
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:29: syntax error, unexpected tSYMBEG, expecting ')'
+        :Tag.all
+         ^
+/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/games_controller.rb:29: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:51:47 -0400
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:28: syntax error, unexpected tSYMBEG, expecting ')'
+        :result,
+         ^
+/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/games_controller.rb:28: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:51:52 -0400
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:28: syntax error, unexpected tSYMBEG, expecting ')'
+        :result,
+         ^
+/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/games_controller.rb:28: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:52:00 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 65ms (Views: 38.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:52:04 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nB1zp5GU8jvzB67lhqohhbI088cKBEEpBWKdZIJzXc/66HXd0/ZQTMzVtvLDK9oDAfULApygJxKzCfoB+l2zcA==", "#<ActionView::Helpers::FormBuilder:0x007fa3d3c2ab40>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Choose...", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d3c2ab40>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 181421ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170806194080'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170806194080'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 13:56:11 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 13:56:12 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q4XW1aZvcSBZxjcg4iMvnyWEaDpLH+fRsDT82OlsIEbNcNCv5A3TV2YULzenotQZlkWQ/927geoGX5u9kULO+Q==", "#<ActionView::Helpers::FormBuilder:0x007fa3d09d1518>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" LIMIT ?[0m  [["LIMIT", 11]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d09d1518>, :g.result
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 52354ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170768196700'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170768196700'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:17:53 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 63ms (Views: 39.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:18:03 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ENZUeZ4tQb3e7/pPAM98bCTQA1ZH+xa/B7aHFnTPfiatl8rpBoXccipp/55gsZ3A1K4yM+7imFKdb15If3TRw==", "#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Win", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 93103ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170827789200'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170827789200'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:21:41 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ENZUeZ4tQb3e7/pPAM98bCTQA1ZH+xa/B7aHFnTPfiatl8rpBoXccipp/55gsZ3A1K4yM+7imFKdb15If3TRw==", "#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Win", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 34075ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170753118900'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170753118900'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:22:21 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ENZUeZ4tQb3e7/pPAM98bCTQA1ZH+xa/B7aHFnTPfiatl8rpBoXccipp/55gsZ3A1K4yM+7imFKdb15If3TRw==", "#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Win", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 14976ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :name, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170832845200'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170832845200'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 14:22:42 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.9ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 46ms (Views: 38.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:22:47 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ENZUeZ4tQb3e7/pPAM98bCTQA1ZH+xa/B7aHFnTPfiatl8rpBoXccipp/55gsZ3A1K4yM+7imFKdb15If3TRw==", "#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Loss", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 49354ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :id, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170768723160'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170768723160'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:23:40 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ENZUeZ4tQb3e7/pPAM98bCTQA1ZH+xa/B7aHFnTPfiatl8rpBoXccipp/55gsZ3A1K4yM+7imFKdb15If3TRw==", "#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "g.result"=>"Loss", "Resource Shortage"=>"true", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d54336b0>, :g.result, :Resource Shortage, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 10360ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :id, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170815074100'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170815074100'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:23:57 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:24:04 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zw/RrewU0Z/k+WTWuKcEKwvjKDmO8pnaIAtYrNldLmkB+tfXrnZz6NsrfMH9Jv+tuCLQ/BhW/+GWYD/JoXPA1g==", "#<ActionView::Helpers::FormBuilder:0x007fa3ceaa3718>"=>{"deck"=>"11", "opponent_deck"=>""}, "g.result"=>"Win", "Opponent Resource Shortage"=>"true", "Blowout-Win"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3ceaa3718>, :g.result, :Opponent Resource Shortage, :Blowout-Win
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 93274ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :id, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170833237720'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170833237720'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:25:43 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 65ms (Views: 39.2ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:25:50 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3gtPiC2ikdKtUNsahd6tkXHV6WW7zA7Kf3q2l10kXiW4/knyb8AzpZKCww3AX1YXwhQRoC1oaPHJEdHyJQqwmg==", "#<ActionView::Helpers::FormBuilder:0x007fa3d3f3be10>"=>{"deck"=>"11", "opponent_deck"=>""}, "g.result"=>"Win", "Resource Excess"=>"true", "Blowout-Win"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d3f3be10>, :g.result, :Resource Excess, :Blowout-Win
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 16829ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck, @decks, :id, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170817369440'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170817369440'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 14:26:11 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.4ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 35ms (Views: 25.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:26:13 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:26:16 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TuiGAOes1+qZ24vFsDdCEWF6rir6+vnxji+x5fZpxHkoHYB6pc51naYJk9L1trmX0rtW72xen8o4RNaAjkcqxg==", "#<ActionView::Helpers::FormBuilder:0x007fa3d0d858d0>"=>{"deck"=>"11", "opponent_deck"=>""}, "g.result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d0d858d0>, :g.result
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 19954ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170805151780'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170805151780'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:26:40 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:26:45 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YNr4ME43pU8aiBtJVlLJRyXaekuLbZmrhvnfyNlj7n4GL/5KDFUHOCVaA14T0zLBlhuCjh3J/5AwkritoU0AwQ==", "#<ActionView::Helpers::FormBuilder:0x007fa3d3e1ced0>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "g.result"=>"Win", "Resource Excess"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d3e1ced0>, :g.result, :Resource Excess
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 143087ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170806454800'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170806454800'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:29:14 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 38ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:29:22 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4EsSHu/6h6Ws/GQGK1HarBzkIzPU12IVTfWzoQQv05aGvhRkrZgl0pMufBFu0CEqryXb9kJzBC77ntTEfAE9KQ==", "#<ActionView::Helpers::FormBuilder:0x007fa3d6c04438>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "Bad Matchup"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d6c04438>, :Bad Matchup
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 117410ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     7:   <div class="info">
+     8:     
+     9:         Deck:
+    10:         <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    11:     
+    12:     
+    13:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:10:in `block in _app_views_games_index_html_erb___884907106997695802_70170767318060'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170767318060'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:31:23 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:31:25 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pCkKPEi34cXgXcljhGU57Zim2SGmcSfNnswH+VY3jA7C3AxGCtVDst+P0XTB5MJrK2ch5DDVQfYop2CcLhlisQ==", "#<ActionView::Helpers::FormBuilder:0x007fa3d383a238>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d383a238>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 67606ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     7:   <div class="info">
+     8:     
+     9:         Deck:
+    10:         <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    11:     
+    12:     
+    13:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:10:in `block in _app_views_games_index_html_erb___884907106997695802_70170756825720'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170756825720'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:32:36 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:33:00 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c4YZUul4gpdsNzcSmroxKvwjvzg+wQ2c0lAfhWg5l8UVcx8oqxog4FPlLwXfO8qsT+JH/ahla6dkO3jgEBd5eg==", "#<ActionView::Helpers::FormBuilder:0x007fa3d727df08>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Opponent Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:33:22 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 30ms (Views: 19.5ms | ActiveRecord: 6.6ms)
+
+
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d727df08>, :Opponent Resource Shortage
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 24969ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <form action="/games/save" method="post">
+     9:     <div class="form-group">
+    10:         Deck:
+    11:         <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:     
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170767875080'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170767875080'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:33:27 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:33:47 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 14:34:21 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 14:34:29 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1IiXLrDOz+AYK7xKNYZD2PYQ2QEHSH1c3eA4n7F2Al6yfZFU8qxtlyf5pF1wB7heRdEhxJHsG2dri1/6yVjs4Q==", "#<ActionView::Helpers::FormBuilder:0x007fa3d538a3d0>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Resource Shortage"=>"true", "Resource Excess"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa3d538a3d0>, :Resource Shortage, :Resource Excess
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 562548ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="dropdown">
+    11:         <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___884907106997695802_70170791731880'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___884907106997695802_70170791731880'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:01:15 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 290ms (Views: 227.6ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:01:24 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uucfOPIMMhPCP3AJVgDMZZIO82HNxAkmOpNahJE7T7ncEhlCsG6QZP3taB4TgTfjIc8LpFtgbx2M+D3h6RWhBg==", "#<ActionView::Helpers::FormBuilder:0x007fa6b7e9d238>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa6b7e9d238>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 12017ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177031458580'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177031458580'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:01:39 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 33ms (Views: 27.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:01:43 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DgOJKWiBbwnSqvAKQEZkNEi4zDc9DbtNaU12hF3xIEho9o9TKuPNfu146B0Fx5+y+3k08qup3XbfJhHhJd/O9w==", "#<ActionView::Helpers::FormBuilder:0x007fa6b9889cc8>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa6b9889cc8>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 10379ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177010075460'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177010075460'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:02:29 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:02:30 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:02:34 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oy0o/xB/r4Sh63exQuOKFqBkNCgGxm6HnjVXM7FZTfZd2C6FUh0N8545b6YHYnGQE6XM7ZBiCLwoXjBWyXejSQ==", "#<ActionView::Helpers::FormBuilder:0x007fa6b5385d48>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa6b5385d48>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 17158ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177045613180'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177045613180'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:04:15 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:06:08 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:06:49 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:06:51 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 26ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:06:56 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EPJfefm8RcbKsVcB55UImqfYZOECTYcMqzeyycjmJZd2B1kDu97nsfVjTxaiFPMcFBmcJJTp4TcdXNWssMjLKA==", "#<ActionView::Helpers::FormBuilder:0x007fa6b544d6b8>"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :#<ActionView::Helpers::FormBuilder:0x007fa6b544d6b8>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 16017ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-group">
+    11:             <%= collection_select(g,:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177061626240'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177061626240'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:07:15 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:08:28 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:08:31 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XaQpLu7nYg8DnL/wxymY1dYkyuyczxzhAUHe79Hq+q47US9UrIXAeDxOp+eCqGNTZeUyKQpretq3KrmKqcQUEQ==", "game"=>{"deck_id"=>"11"}, "result"=>"Choose...", "#<ActionView::Helpers::FormBuilder:0x007fa6b63a6790>"=>{"opponent_deck"=>""}, "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game, :#<ActionView::Helpers::FormBuilder:0x007fa6b63a6790>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 12822ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70176991969020'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70176991969020'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:10:17 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:10:21 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:10:26 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:10:29 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/EGyPR5P6xFfkQarFJl2x/jKR9Xqy398fdyjWm7/7x+atLRHXC1JZmBDHrxRGI1BSwu/EHxvGUfLt8Q/FtEBoA==", "game"=>{"deck_id"=>"11"}, "result"=>"Choose...", "#<ActionView::Helpers::FormBuilder:0x007fa6bd1fc0c8>"=>{"opponent_deck"=>""}, "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:12:43 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.9ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 47ms (Views: 41.2ms | ActiveRecord: 1.6ms)
+
+
+Unpermitted parameters: :utf8, :authenticity_token, :game, :#<ActionView::Helpers::FormBuilder:0x007fa6bd1fc0c8>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 137282ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177056512800'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177056512800'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:12:49 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:13:35 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8QC9a1HEOcy1Lel6clr2y/ELzbQx69lSHBoQTqLGaGeX9bsRE6abu4r/8W032w1NQso1cadPv2mqcXcr2uiG2A==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 111734ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70176985607280'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70176985607280'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:15:31 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:15:33 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"myZYdZ92AWXy1SOoWPudE3ex61Cps16nb9CLTMNlU0f9014P3RSjEs0HO78demaVxHATlT8XOJzZu+wpu0u9+A==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 11114ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177062070380'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177062070380'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:16:01 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:16:11 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NC6OYNpoJwgoNcxiFAulMc9BVrKB/iQnFVeaBXa6FxBS24gamAqFfxfn1HVRil63fICudxdaQhyjPP1gDpT5rw==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "g.result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game, :g.result
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 11125ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177061303680'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177061303680'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:18:06 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:18:09 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cUxf6enrRTQZunaA6jTpM0895MfXSzU5vEuAraBeaKUXuVmTq4nnQyZobpevtRK1/PwcAkHvUwIKIOfI2HCGGg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 70163ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177061334120'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177061334120'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:19:24 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:19:26 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pUUdvqdCOh6fBOBOFA+egwPv0Awn+3KDiQeIVkH1sKjDsBvE5SCYaaDW+FlRjmUFsC4oybFfFLg/bO8zOdteFw==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 12848ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177027241460'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177027241460'
+app/controllers/games_controller.rb:17:in `block (2 levels) in create'
+app/controllers/games_controller.rb:12:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:21:12 -0400
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:29: syntax error, unexpected [, expecting ')'
+        [:game][:opponent_deck]
+         ^
+/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/games_controller.rb:29: syntax error, unexpected [, expecting ')'
+app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:21:19 -0400
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:29: syntax error, unexpected [, expecting ')'
+        [:game][:opponent_deck]
+         ^
+/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/games_controller.rb:29: syntax error, unexpected [, expecting ')'
+app/controllers/games_controller.rb:30: syntax error, unexpected ')', expecting keyword_end
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:21:52 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.7ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 62ms (Views: 35.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:21:57 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tmIskg9drAusQ0xoGSuBBTdWWw5qKkvHt/CoOCFOVBTQlyroTT8OfJORVH9cqnqDhJejy/yOLfwBm89dWWC6qw==", "game"=>{"deck_id"=>"11", "opponent_deck"=>"adsf"}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14116ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:28:in `[]'
+app/controllers/games_controller.rb:28:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:24:02 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 75ms (Views: 42.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:24:09 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7BdL1sUjJu2GjJmmvfpxryyOn2a8VdOvyjPNQS6oY2eK4k2sh0GEmrlegbH4e4opn09noyrxtZR8WKokVoaN2A==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Bad Matchup"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5474ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:28:in `[]'
+app/controllers/games_controller.rb:28:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:26:33 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7BdL1sUjJu2GjJmmvfpxryyOn2a8VdOvyjPNQS6oY2eK4k2sh0GEmrlegbH4e4opn09noyrxtZR8WKokVoaN2A==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Resource Shortage"=>"true", "Bad Matchup"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 39755ms (ActiveRecord: 0.8ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:28:in `[]'
+app/controllers/games_controller.rb:28:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:27:23 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (1.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 106ms (Views: 59.3ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:27:28 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"He1Kk5MXW/3gO5LKQYXDihNKc552HWHw7DrkPHNk3Sp7GEzp0XX5it/pit0EBDgMoIuLW+C5B8taUYNZC0ozlQ==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Bad Matchup"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2673ms (ActiveRecord: 0.1ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:28:in `[]'
+app/controllers/games_controller.rb:28:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:28:26 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"He1Kk5MXW/3gO5LKQYXDihNKc552HWHw7DrkPHNk3Sp7GEzp0XX5it/pit0EBDgMoIuLW+C5B8taUYNZC0ozlQ==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Bad Matchup"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4215ms (ActiveRecord: 0.6ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:28:in `[]'
+app/controllers/games_controller.rb:28:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:29:01 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.8ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 70ms (Views: 44.0ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:29:06 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DllMZPwKTe0JVmfyzN39dZ95UfyQ4NdXywQLsiGbQDporEoevmjvmjaEf+WJXAbzLLipOQZEsWx9b2zXWbWuhQ==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Blowout-Win"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2233ms (ActiveRecord: 0.1ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:28:in `[]'
+app/controllers/games_controller.rb:28:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:29:50 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DllMZPwKTe0JVmfyzN39dZ95UfyQ4NdXywQLsiGbQDporEoevmjvmjaEf+WJXAbzLLipOQZEsWx9b2zXWbWuhQ==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Blowout-Win"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3583ms (ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:28:in `[]'
+app/controllers/games_controller.rb:28:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:30:23 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DllMZPwKTe0JVmfyzN39dZ95UfyQ4NdXywQLsiGbQDporEoevmjvmjaEf+WJXAbzLLipOQZEsWx9b2zXWbWuhQ==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Blowout-Win"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3308ms (ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:29:in `[]'
+app/controllers/games_controller.rb:29:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:37:51 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DllMZPwKTe0JVmfyzN39dZ95UfyQ4NdXywQLsiGbQDporEoevmjvmjaEf+WJXAbzLLipOQZEsWx9b2zXWbWuhQ==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Blowout-Win"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4368ms (ActiveRecord: 0.5ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:29:in `[]'
+app/controllers/games_controller.rb:29:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:38:01 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  Rendered games/index.html.erb within layouts/application (237.0ms)
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `deck_id' for #<#<Class:0x007fa6b9cfbdd8>:0x007fa6b9cfa320>
+Did you mean?  deck_url):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70176999228260'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70176999228260'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:39:28 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  Rendered games/index.html.erb within layouts/application (95.3ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `deck_id' for #<ActionView::Helpers::FormBuilder:0x007fa6bbc227e8>):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(g.deck_id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177013678000'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177013678000'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:40:24 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_i' for :deck_id:Symbol
+Did you mean?  to_s):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck_id.to_i, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177060310720'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177060310720'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:41:09 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:41:17 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oqjJgfmNjCNcF3/Zl900PWHMGVBTpB0f874yuKkScFvEXc/7u+8uVGPFZ87SXM+70g3hlcUAeyRF1VXd0Tye5A==", "game"=>{"deck"=>"11", "opponent_deck"=>"FISH!"}, "result"=>"Win", "Bad Draw"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 47854ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `strip' for nil:NilClass):
+  
+app/controllers/games_controller.rb:25:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:42:31 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 72ms (Views: 40.1ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:42:38 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lTAuqiNlZMNqgj7LWr/e4gWSW5UjbM/bu4T7lnzvt9bzxSjQYQfGtFVQJtwfPiVktlOjULXIqeAN75zzBMFZaQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2524ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:29:in `[]'
+app/controllers/games_controller.rb:29:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:43:04 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:43:09 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:43:13 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:29:in `[]'
+app/controllers/games_controller.rb:29:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:44:31 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1612ms (ActiveRecord: 1.6ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:29:in `[]'
+app/controllers/games_controller.rb:29:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:45:16 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:29:in `[]='
+app/controllers/games_controller.rb:29:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:47:04 -0400
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:25: syntax error, unexpected keyword_end
+/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/games_controller.rb:25: syntax error, unexpected keyword_end
+app/controllers/games_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:47:27 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:24:in `[]='
+app/controllers/games_controller.rb:24:in `convert'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:49:26 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:32:in `[]'
+app/controllers/games_controller.rb:32:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:49:36 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:32:in `[]'
+app/controllers/games_controller.rb:32:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:49:56 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:32:in `[]'
+app/controllers/games_controller.rb:32:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:50:02 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y/uMzkIosDCjDmHWNlq9T0GQUk/b6ioFnHVNzV8mw6mtDoq0AEoSR5zcecFz20bJ8lGqik1OTD4qHiqoJwgtFg==", "game"=>{"deck_id"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:32:in `[]'
+app/controllers/games_controller.rb:32:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:50:32 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `deck' for :@decks:Symbol):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:@decks.deck.id, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb___3209888083377479339_70177030169720'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb___3209888083377479339_70177030169720'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:52:35 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.7ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 73ms (Views: 42.1ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:52:37 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e7hEE9LxrjrY/kcLIC5iOLUH0DEvQy0EsQb1nSlUrlIdTUJpkJMMTecsXxxlr5m+BsYo9LnnSz8HbZL4UXpA7Q==", "game"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=HELPME!):
+  
+app/controllers/games_controller.rb:24:in `convert'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:53:02 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e7hEE9LxrjrY/kcLIC5iOLUH0DEvQy0EsQb1nSlUrlIdTUJpkJMMTecsXxxlr5m+BsYo9LnnSz8HbZL4UXpA7Q==", "game"=>{"deck"=>"HELPME!", "opponent_deck"=>""}, "result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=HELPME!):
+  
+app/controllers/games_controller.rb:24:in `convert'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:53:05 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:53:07 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t/aUOTK8001isMQ2Phah16zrfCIg6Q7KdrBOOgH8qCLRA5JDcN5xOl1i3CF7l1pRHyqE57ZNaPHA2ylfedJGnQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Choose...", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 50587ms (ActiveRecord: 0.2ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:33:in `[]'
+app/controllers/games_controller.rb:33:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 15:54:07 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 76ms (Views: 51.2ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:54:12 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"By/vLHwq9scq3lFxgPlnwPMefeZly18xOhTTIQOZ4VBh2ulWPkhUsBUMSWbFeJxGQN+FI/NvOQqMf7REe7cP7w==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/games_controller.rb:32:in `[]'
+app/controllers/games_controller.rb:32:in `game_params'
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 15:54:40 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"By/vLHwq9scq3lFxgPlnwPMefeZly18xOhTTIQOZ4VBh2ulWPkhUsBUMSWbFeJxGQN+FI/NvOQqMf7REe7cP7w==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (5.9ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Loss"], ["created_at", "2018-08-24 19:56:19.507332"], ["updated_at", "2018-08-24 19:56:19.507332"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 99003ms (ActiveRecord: 10.3ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa6bdfb3e78>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:16:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
