@@ -10,7 +10,7 @@
         <p><strong>Wins:</strong> <%= @deck.wins %></p>
         <p><strong>Losses:</strong> <%= @deck.losses %></p>
         <% if @deck.link != nil %>
-            <p><strong>Link:</strong> <a href=https://<%=@deck.link%> target="_blank" ><%=@deck.link%></a></p>
+            <p><strong>Link:</strong> <a href=https://<%=@deck.link%> target="_blank" ><%=@deck.short_link%></a></p>
         <%end%>
     <p><%= link_to 'Play some Games!', games_path %></p>
     <%= link_to 'Back to decks list', decks_path,class: "btn btn-primary btn-light" %>

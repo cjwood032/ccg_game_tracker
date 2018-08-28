@@ -11,9 +11,16 @@ class Deck < ActiveRecord::Base
             self.update(:losses=> self.losses+=1)
         end
     end
+
     def short_link
-        if @deck.link
-            short_link=@deck.link[4..13]
+        if self.link!=nil
+            if self.link.split('.').length==3
+                self.link.split('.')[1]
+            elsif self.link.split('.').length==2
+                self.link.split('.')[0].split('/')[2]
+            else
+                "Link is Suspicious: Be Wary"
+            end
         end
     end
 end
