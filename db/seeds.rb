@@ -21,8 +21,17 @@ DATA = {
   ],
   :ccg_keys => ["name"],
   :ccgs => [
+    ["Duelist"],
+    ["Eternal"],
+    ["Faeria"],
+    ["Gwent"],
+    ["Hearthstone"],
+    ["Hex"],
+    ["Legends"],
+    ["Magic Arena"],
     ["MTGO"],
-    ["Eternal"]
+    ["Pokemon"],
+    ["Shadowverse"]
   ],
   
   :game_keys => ["deck_id", "result"],
