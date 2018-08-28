@@ -14219,3 +14219,653 @@ Did you mean?  to_xml):
   
 app/controllers/games_controller.rb:16:in `block (2 levels) in create'
 app/controllers/games_controller.rb:13:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 16:04:04 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 294ms (Views: 230.6ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:04:10 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:04:28.345763"], ["updated_at", "2018-08-24 20:04:28.345763"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 27708ms (ActiveRecord: 8.3ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa439652ec8>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:16:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:05:33 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:08:31.105375"], ["updated_at", "2018-08-24 20:08:31.105375"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 177460ms (ActiveRecord: 2.8ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa436ad1740>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:16:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:08:40 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:08:55.015841"], ["updated_at", "2018-08-24 20:08:55.015841"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 19153ms (ActiveRecord: 9.3ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa43c197980>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:09:48 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:09:52.935858"], ["updated_at", "2018-08-24 20:09:52.935858"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 216400ms (ActiveRecord: 7.0ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa43c4e0448>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:13:29 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:13:29.880945"], ["updated_at", "2018-08-24 20:13:29.880945"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 19147ms (ActiveRecord: 4.2ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa43c6a4270>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:13:57 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:13:57.555645"], ["updated_at", "2018-08-24 20:13:57.555645"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 6856ms (ActiveRecord: 3.5ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa434e9ba30>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:15:35 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:15:35.409663"], ["updated_at", "2018-08-24 20:15:35.409663"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 38099ms (ActiveRecord: 4.4ms)
+
+
+  
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Deck::ActiveRecord_Associations_CollectionProxy:0x007fa43c2d3c40>
+Did you mean?  to_xml):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:16:17 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:16:17.578604"], ["updated_at", "2018-08-24 20:16:17.578604"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 4.0ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/models/deck.rb:9:in `record_game'
+app/controllers/games_controller.rb:15:in `block in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:16:31 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qbxmRXWwKW/+MSxPlpDcouwvZrd+bMan1jDOtO+fBgHPSWA/N9KLGMHjNFjTESckX+6ecujIoJxgW6nRl7Hovg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:16:31.390387"], ["updated_at", "2018-08-24 20:16:31.390387"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for GamesController#create, rendering head :no_content
+Completed 204 No Content in 39784ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 16:17:23 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 63ms (Views: 38.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 16:17:23 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 65ms (Views: 57.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 16:17:26 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-08-24 16:17:35 -0400
+Processing by DecksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  Rendered decks/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-08-24 16:17:37 -0400
+Processing by DecksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  Rendered decks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 16:17:38 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.3ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 16:18:15 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:18:19 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jybd4p58CcCJgeSoj5ptx2oRRf9dT2VLf60GYk1ZXs1B09uY3B6rt7ZT/L/KG5ZB2dC9OsvrA3DJxmEHNXewcg==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Loss"], ["created_at", "2018-08-24 20:18:19.089800"], ["updated_at", "2018-08-24 20:18:19.089800"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 292046ms (ActiveRecord: 7.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial decks/_deck with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/views"
+):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:23:20 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GiCsx7/4C2nN/tLEfX5hCUiaSZPJ/o6JetTjZPD7vvZ81aq9/ZqpHvIsytM4/5qP+1uxVl9a6LLMv4QBiNVQSQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/models/deck.rb:9: syntax error, unexpected tOP_ASGN, expecting ')'
+            self.update(:wins+=1)
+                               ^
+/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/models/deck.rb:11: syntax error, unexpected tOP_ASGN, expecting ')'
+            self.update(:losses+=1)
+                                 ^):
+  
+app/models/deck.rb:9: syntax error, unexpected tOP_ASGN, expecting ')'
+app/models/deck.rb:11: syntax error, unexpected tOP_ASGN, expecting ')'
+app/controllers/games_controller.rb:27:in `get_deck'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:23:57 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GiCsx7/4C2nN/tLEfX5hCUiaSZPJ/o6JetTjZPD7vvZ81aq9/ZqpHvIsytM4/5qP+1uxVl9a6LLMv4QBiNVQSQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:23:57.391670"], ["updated_at", "2018-08-24 20:23:57.391670"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/models/deck.rb:9:in `record_game'
+app/controllers/games_controller.rb:15:in `block in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:24:16 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GiCsx7/4C2nN/tLEfX5hCUiaSZPJ/o6JetTjZPD7vvZ81aq9/ZqpHvIsytM4/5qP+1uxVl9a6LLMv4QBiNVQSQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:24:16.325852"], ["updated_at", "2018-08-24 20:24:16.325852"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Update (0.3ms)[0m  [1m[33mUPDATE "decks" SET "wins" = ?, "updated_at" = ? WHERE "decks"."id" = ?[0m  [["wins", 1], ["updated_at", "2018-08-24 20:24:16.344983"], ["id", 11]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 8094ms (ActiveRecord: 10.6ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial decks/_deck with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/views"
+):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 16:24:28 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 32ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 16:26:37 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 45ms (Views: 34.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:26:43 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKr6cBmHe61z69U6tXk2pU3ziMDfVcMTrx3Lk2+XkNrSX/wKW+XZ2kw5zS3w+M0j/jJwBUnxpSgZdqz2F7l+ZQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Loss"], ["created_at", "2018-08-24 20:26:43.082909"], ["updated_at", "2018-08-24 20:26:43.082909"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Update (0.5ms)[0m  [1m[33mUPDATE "decks" SET "losses" = ?, "updated_at" = ? WHERE "decks"."id" = ?[0m  [["losses", 1], ["updated_at", "2018-08-24 20:26:43.091467"], ["id", 11]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 62351ms (ActiveRecord: 8.8ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial decks/_deck with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/views"
+):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:27:49 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKr6cBmHe61z69U6tXk2pU3ziMDfVcMTrx3Lk2+XkNrSX/wKW+XZ2kw5zS3w+M0j/jJwBUnxpSgZdqz2F7l+ZQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Loss"], ["created_at", "2018-08-24 20:27:49.310577"], ["updated_at", "2018-08-24 20:27:49.310577"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Update (0.2ms)[0m  [1m[33mUPDATE "decks" SET "losses" = ?, "updated_at" = ? WHERE "decks"."id" = ?[0m  [["losses", 2], ["updated_at", "2018-08-24 20:27:49.320487"], ["id", 11]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 3542ms (ActiveRecord: 4.4ms)
+
+
+  
+NoMethodError (undefined method `index_url' for #<GamesController:0x007fa43c44a308>
+Did you mean?  index):
+  
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:31:18 -0400
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/controllers/games_controller.rb:18: syntax error, unexpected ','
+...rmat.html { redirect_to index:, notice: 'Game was successful...
+...                               ^):
+  
+app/controllers/games_controller.rb:18: syntax error, unexpected ','
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:31:39 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKr6cBmHe61z69U6tXk2pU3ziMDfVcMTrx3Lk2+XkNrSX/wKW+XZ2kw5zS3w+M0j/jJwBUnxpSgZdqz2F7l+ZQ==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Loss", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Loss"], ["created_at", "2018-08-24 20:31:39.626217"], ["updated_at", "2018-08-24 20:31:39.626217"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Update (0.2ms)[0m  [1m[33mUPDATE "decks" SET "losses" = ?, "updated_at" = ? WHERE "decks"."id" = ?[0m  [["losses", 3], ["updated_at", "2018-08-24 20:31:39.637296"], ["id", 11]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 4685ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb__918718558998262451_70171690532240'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb__918718558998262451_70171690532240'
+app/controllers/games_controller.rb:18:in `block (2 levels) in create'
+app/controllers/games_controller.rb:13:in `create'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 16:33:25 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (uninitialized class variable @@decks in ActionView::CompiledTemplates):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck, @@decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb__918718558998262451_70171704251060'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb__918718558998262451_70171704251060'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 16:33:34 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:     
+     9:         Deck:
+    10:         <div class="form-check form-check-inline">
+    11:             <%= g.collection_select(:deck, @decks, :id, :name) %>
+    12:         </div>
+    13:     
+    14:         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+  
+app/views/games/index.html.erb:11:in `block in _app_views_games_index_html_erb__918718558998262451_70171696218400'
+app/views/games/index.html.erb:3:in `_app_views_games_index_html_erb__918718558998262451_70171696218400'
+Started GET "/games" for 127.0.0.1 at 2018-08-24 16:34:57 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 66ms (Views: 43.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-08-24 16:35:06 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m4315vps8/GCXl53enErvTyiZUrkYOYm8Ki9SLaXo179ePOcuA5Rhr2MRmA/8NA7j2Odj3LEgB1Gw9otzrlN4Q==", "game"=>{"deck"=>"11", "opponent_deck"=>""}, "result"=>"Win", "Resource Shortage"=>"true", "user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :game, :Resource Shortage
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["deck_id", 11], ["result", "Win"], ["created_at", "2018-08-24 20:35:06.592524"], ["updated_at", "2018-08-24 20:35:06.592524"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Update (0.3ms)[0m  [1m[33mUPDATE "decks" SET "wins" = ?, "updated_at" = ? WHERE "decks"."id" = ?[0m  [["wins", 2], ["updated_at", "2018-08-24 20:35:06.610941"], ["id", 11]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3784ms (Views: 29.2ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-08-24 17:20:51 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 80ms (Views: 70.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/decks/11" for 127.0.0.1 at 2018-08-24 17:20:52 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.5ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 54ms (Views: 45.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/decks/11/edit" for 127.0.0.1 at 2018-08-24 17:20:54 -0400
+Processing by DecksController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering decks/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.3ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  Rendered decks/_form.html.erb (19.5ms)
+  Rendered decks/edit.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 68ms (Views: 52.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-25 04:24:20 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 254ms (Views: 223.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2018-08-25 04:24:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ujm/+FjOB8y78AanUyzijzANe+yJPiGMJjm5BaSONEw0zLmCGqylu4QiHrAWrRkJg8yDKR+aR7eQUt5g3KDa8w==", "name"=>"chris", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "chris"], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/users/1
+Completed 302 Found in 57ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-25 04:24:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.3ms)
+
+

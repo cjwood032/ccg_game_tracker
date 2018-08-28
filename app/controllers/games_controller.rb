@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    before_action :convert, only: [:create]
+    before_action :get_deck, only: [:create]
     def show
     end
     def index
@@ -9,11 +9,14 @@ class GamesController < ApplicationController
     def create
         @game=Game.new(game_params)
         @game.deck_id=@deck.id
-        binding.pry
+        
         respond_to do |format|
             if @game.save
-              @game=Game.new
-              format.html { redirect_to index, notice: 'Game was successfully recorded.' }
+                @deck.record_game(@game.result)
+                @game=Game.new
+                binding.pry
+                @decks=current_user.decks
+              format.html { render :index, notice: 'Game was successfully recorded.' }
             else
               format.html { render :index, notice: 'Game was not recorded!' }
             end
@@ -21,7 +24,7 @@ class GamesController < ApplicationController
       end
 
     private
-      def convert
+      def get_deck
         @deck=Deck.find(params[:game][:deck])
       end
       def game_params
