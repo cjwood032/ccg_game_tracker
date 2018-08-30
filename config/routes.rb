@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "/decks/new", to: "decks#new"
   post "/games/save", to: "games#save"
   post "/decks/:id/delete", to: "decks#destroy"
+  post"/users/:id/delete", to: "users#destroy"
   resources :decks
   resources :games
   resources :ccgs
