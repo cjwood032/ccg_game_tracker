@@ -27,6 +27,7 @@ class DecksController < ApplicationController
             end
           end
     end
+    
     def update
         respond_to do |format|
             if @deck.update(deck_params)
@@ -36,6 +37,14 @@ class DecksController < ApplicationController
             end
           end
     end
+
+    def destroy
+        @deck.destroy
+        respond_to do |format|
+          format.html { redirect_to decks_url, notice: 'Deck was successfully deleted.' }
+        end
+    end
+    
     private
     def set_deck
         @deck=Deck.find(params[:id])

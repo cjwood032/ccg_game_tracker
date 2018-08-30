@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "/signout", to: "sessions#destroy"
   post "/decks/new", to: "decks#new"
   post "/games/save", to: "games#save"
+  post "/decks/:id/delete", to: "decks#destroy"
   resources :decks
   resources :games
   resources :ccgs
