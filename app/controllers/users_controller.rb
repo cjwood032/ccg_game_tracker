@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    current_user=@user
+    binding.pry
   end
 
   def create
@@ -35,7 +37,11 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    redirect_to root_url
+end
   private
     def set_user
       @user = User.find(params[:id])

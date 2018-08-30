@@ -13,7 +13,7 @@ class Deck < ActiveRecord::Base
     end
 
     def short_link
-        if self.link!=nil
+        if self.link!=""||nil
             if self.link.split('.').length==3
                 self.link.split('.')[1]
             elsif self.link.split('.').length==2

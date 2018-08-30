@@ -10,6 +10,7 @@
 
   <div class="info">
     <p><strong>Name:</strong> <%= @user.name %></p>
+    <%= link_to 'Edit User', [:edit, @user] %> 
     <p><%= link_to 'View/Edit your decks', decks_path %></p>
     <p><%= link_to 'Play some Games!', games_path %></p>
   </div>

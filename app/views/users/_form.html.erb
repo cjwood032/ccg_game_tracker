@@ -27,7 +27,6 @@
     <div class="actions">
       <%= f.submit class: "btn btn-primary" %>
     </div>
-    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-        <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    
     
   <% end %>
