@@ -1,0 +1,12 @@
+class ChangeUsersUids < ActiveRecord::Migration[5.2]
+  def up
+    change_table :users do |t|
+      t.change :uid, :string
+    end
+  end
+  def down
+    change_table :users do |t|
+      t.change :uid, :integer
+    end
+  end
+end

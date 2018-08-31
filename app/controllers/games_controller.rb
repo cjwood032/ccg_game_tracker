@@ -14,7 +14,7 @@ class GamesController < ApplicationController
             if @game.save
                 @deck.record_game(@game.result)
                 @game=Game.new
-                binding.pry
+                #binding.pry
                 @decks=current_user.decks
               format.html { render :index, notice: 'Game was successfully recorded.' }
             else
@@ -28,7 +28,7 @@ class GamesController < ApplicationController
         @deck=Deck.find(params[:game][:deck])
       end
       def game_params
-        binding.pry
+        #binding.pry
         params.permit(
         :user_id,
         :result,
