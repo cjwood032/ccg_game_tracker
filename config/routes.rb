@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/games/save", to: "games#save"
   post "/decks/:id/delete", to: "decks#destroy"
   post"/users/:id/delete", to: "users#destroy"
+  get '/auth/google/callback' => 'sessions#gcreate'
+  get '/auth/facebook/callback' => 'sessions#gcreate'
   resources :decks
   resources :games
   resources :ccgs

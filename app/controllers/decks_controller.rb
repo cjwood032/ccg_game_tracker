@@ -19,6 +19,10 @@ class DecksController < ApplicationController
         @deck.user_id=current_user.id
         @deck.wins=0
         @deck.losses=0
+        binding.pry
+        
+
+
         respond_to do |format|
             if @deck.save
               format.html { redirect_to @deck, notice: 'Deck was successfully created.' }

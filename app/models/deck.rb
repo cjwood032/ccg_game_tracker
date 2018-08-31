@@ -2,7 +2,8 @@ class Deck < ActiveRecord::Base
     belongs_to :ccg
     has_many :games
     has_many :users
-    has_many :tags, :through => :decktags
+    has_many :deck_tags
+    has_many :tags, through: :deck_tags
 
     def record_game(result)
         if result == "Win" 

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     current_user=@user
-    binding.pry
+    #binding.pry
   end
 
   def create
@@ -24,7 +24,9 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  
+  
+  
   def edit
   end
 
@@ -49,6 +51,7 @@ end
 
 
     def user_params
+      binding.pry
       params.require(:user).permit(
         :name,
         :password
