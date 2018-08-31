@@ -23,7 +23,10 @@
       <%= f.label :password %>
       <br>
       <%= f.password_field :password, class: "form-control" %>
+      
   
+
+    <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) %>
     <div class="actions">
       <%= f.submit class: "btn btn-primary" %>
     </div>

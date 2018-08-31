@@ -28,7 +28,7 @@ class GamesController < ApplicationController
         @deck=Deck.find(params[:game][:deck])
       end
       def game_params
-        #binding.pry
+        binding.pry
         params.permit(
         :user_id,
         :result,
