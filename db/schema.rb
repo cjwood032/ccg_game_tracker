@@ -10,17 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_141114) do
+ActiveRecord::Schema.define(version: 2018_08_31_174610) do
 
   create_table "ccgs", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "deck_tags", force: :cascade do |t|
-    t.integer "deck_id"
-    t.integer "tag_id"
   end
 
   create_table "decks", force: :cascade do |t|
@@ -34,6 +29,11 @@ ActiveRecord::Schema.define(version: 2018_08_24_141114) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "game_tags", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "tag_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "deck_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_08_24_141114) do
     t.text "opponent_deck"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comment"
   end
 
   create_table "tags", force: :cascade do |t|
