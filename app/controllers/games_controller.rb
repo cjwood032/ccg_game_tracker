@@ -26,17 +26,19 @@ class GamesController < ApplicationController
     end
     def create
         @game=Game.new(game_params)
-        @game.deck_id=@deck.id
-        
+        @game.user_id=current_user.id
+        #binding.pry
         respond_to do |format|
             if @game.save
+                binding.pry
                 @deck.record_game(@game.result)
                 @game=Game.new
-                #binding.pry
+               #binding.pry
                 @decks=current_user.decks
               format.html { render :new, notice: 'Game was successfully recorded.' }
             else
-              format.html { render :index, notice: 'Game was not recorded!' }
+              @decks=current_user.decks
+              format.html { render :new, notice: 'Game was not recorded!' }
             end
           end
       end
@@ -53,15 +55,17 @@ class GamesController < ApplicationController
       end
 
       def get_deck
-        @deck=Deck.find(params[:game][:deck])
+        @deck=Deck.find(params[:game][:deck_id])
       end
       def game_params
         #binding.pry
-        params.permit(
+        params.require(:game).permit(
         :user_id,
+        :deck_id,
         :result,
-        :tags
+        :tags,
+        :comment,
+        :opponent_deck
         )
-        
       end
 end
