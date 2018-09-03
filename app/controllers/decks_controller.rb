@@ -1,7 +1,7 @@
 class DecksController < ApplicationController
     before_action :set_deck, only: [:show, :edit, :update, :destroy]
     def index
-        @decks=Deck.all
+        @decks=current_user.decks
         #binding.pry
     end
 
@@ -19,7 +19,7 @@ class DecksController < ApplicationController
         @deck.user_id=current_user.id
         @deck.wins=0
         @deck.losses=0
-        binding.pry
+        #binding.pry
         
 
 

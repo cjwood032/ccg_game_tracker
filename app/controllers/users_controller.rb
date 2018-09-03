@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @message = params[:message] if params[:message]
     @message ||= false
+    #binding.pry
   end
 
   def new
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    binding.pry
+    @user.ccg_ids=params[:user][:ccg_ids]
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
@@ -51,9 +52,10 @@ end
 
 
     def user_params
-      binding.pry
       params.require(:user).permit(
         :name,
+        :Username,
+        :ccg_ids,
         :password
       )
     end  

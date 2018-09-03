@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
           u.name = auth['info']['name']
           u.password = SecureRandom.hex
         end
-        binding.pry
+       
         
         session[:user_id] = @user.id
      

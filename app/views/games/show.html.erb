@@ -1,0 +1,9 @@
+<div class="center">
+        <div class="info">
+        <p><strong>Deck Name:</strong> <%= @game.deck.name %></p>
+        <p><strong>Game:</strong> <%= @game.deck.ccg.name %></p>
+        <p><strong>Result:</strong> <%= @game.result %></p>
+        
+        <% @game.tags.each do |tag|%>
+           <%=tag.name%>:<%=@deck.tag.count%>
+        <%end%>
