@@ -3,7 +3,12 @@
         <p><strong>Deck Name:</strong> <%= @game.deck.name %></p>
         <p><strong>Game:</strong> <%= @game.deck.ccg.name %></p>
         <p><strong>Result:</strong> <%= @game.result %></p>
-        
+        <%if @game.opponent_deck %>
+           <p><strong>opponent deck:</strong> <%= @game.opponent_deck %></p>
+        <%end%>
+        <%if @game.comment %>
+           <p><strong>Comments:</strong> <%= @game.comment %></p>
+        <%end%>
         <% @game.tags.each do |tag|%>
            <%=tag.name%>:<%=@deck.tag.count%>
         <%end%>
