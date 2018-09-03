@@ -12,7 +12,7 @@
     <p><strong>Username:</strong> <%= @user.Username %></p>
     <p><strong>Name:</strong> <%= @user.name %></p>
     <p><strong>CCGs you play:<br></br></strong> <% @user.ccg_ids.each do |g| %>
-      <%=Ccg.find(g).name%>
+      <%=Ccg.find(g).name%><br>
     <%end%>
     </p>
     <%= link_to 'Edit User', [:edit, @user] %> 
