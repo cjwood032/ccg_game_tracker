@@ -34,12 +34,14 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        @user.ccg_ids=params[:user][:ccg_ids]
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
       else
         format.html { render :edit }
       end
     end
   end
+
   def destroy
     @user.destroy
     session[:user_id] = nil

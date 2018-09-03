@@ -3,12 +3,22 @@ class GamesController < ApplicationController
     def show
     end
     def index
-        @games=current_user.games
-        @decks=current_user.decks
+        @games=current_user.games.select{|g| g.created_at.today?}
+        @last_game=@games.last
+        @games.reverse!
+        #binding.pry
     end
     def new
       @game=Game.new
       @decks=current_user.decks
+      #binding.pry
+    end
+    def delete
+      #binding.pry
+      current_user.games.last.destroy
+      respond_to do |format|
+        format.html { redirect_to games_path, notice: 'Game was deleted' }
+      end
     end
     def show
       @game=Game.find(params[:id])
@@ -46,7 +56,7 @@ class GamesController < ApplicationController
         @deck=Deck.find(params[:game][:deck])
       end
       def game_params
-        binding.pry
+        #binding.pry
         params.permit(
         :user_id,
         :result,

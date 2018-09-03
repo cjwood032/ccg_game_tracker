@@ -1,10 +1,23 @@
 <strong>Play a game! </strong>
 <p id="notice"><%= notice %></p>
 <p><%= link_to 'Play Games!', new_game_path %></p>
-<%@games.each do |game| %> 
-    <div>
-     <td><%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> </td>
-    </div>
+<% if @games%>
+    <%@games.each do |game| %> 
+        <div>
+        <% if game==@last_game%>
+            <td>
+                <form action="/games/delete" method="POST"><input type="submit" value="Delete Most Recent Game">
+                    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+                    <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+                </form>
+                <%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> 
+            </td>
+
+        <%else%>
+            <td><%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> </td>
+        <%end%>
+        </div>
+    <%end%>
 <%end%>
  
 
