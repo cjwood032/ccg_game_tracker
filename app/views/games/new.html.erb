@@ -1,0 +1,48 @@
+<strong>Play a game! </strong> 
+<p><%= link_to 'View Games', games_path %></p>
+<p id="notice"><%= notice %></p>
+<%= form_for @game do |g| %>
+
+<div class="center">
+
+
+    
+        Deck:
+        <div class="form-check form-check-inline">
+            <%= g.collection_select(:deck, @decks, :id, :name) %>
+        </div>
+    
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+        <select class="custom-select my-1 mr-sm-2" name="result">
+            <option selected>Choose...</option>
+            <option value="Win">Win</option>
+            <option value="Loss">Loss</option>
+        </select>
+    
+    <h4>optional:</h4>
+    
+    <div class="form-check form-check-inline">
+        <b><%= g.label :opponent_deck, "Opponent's deck" %></b>
+            <%= g.text_field :opponent_deck, class: "form-control"%></div>
+    
+    
+            
+
+
+    <label><h4><center>Tags</center></h4></label><br>
+    <% Tag.all.each do |tag| %>
+      <div class="form-check form-check-inline">
+      <label><%= tag.name %></label>
+      <input class="form-check-input" type="checkbox" id="tag_<%=tag.id%>" name="<%= tag.name %>" value="true"%>
+    	</div>
+    <%end%>
+    </div>
+    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+        <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+      <input class: "btn btn-primary" type="submit" value="Record Game" >
+    </form>
+  <%end%>
+  </div>
+ 
+
+
