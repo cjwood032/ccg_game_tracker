@@ -24,4 +24,16 @@ class Deck < ActiveRecord::Base
             end
         end
     end
+    def tag_count
+        tags=[]
+        self.games.each do |game|
+            game.tags.each do |tag|
+                tags << tag  
+            end
+        end
+        tags  
+    end
+
+
+
 end
