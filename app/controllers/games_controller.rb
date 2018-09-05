@@ -27,10 +27,11 @@ class GamesController < ApplicationController
     def create
         @game=Game.new(game_params)
         @game.user_id=current_user.id
+        make_tags(@game)
         #binding.pry
         respond_to do |format|
             if @game.save
-                binding.pry
+                #binding.pry
                 @deck.record_game(@game.result)
                 @game=Game.new
                #binding.pry
@@ -44,14 +45,8 @@ class GamesController < ApplicationController
       end
 
     private
-      def make_tags
-        tags=[]
-        Tag.all.each do |tag|
-          if params.key?(tag.name)
-            tags << tag
-          end
-        end
-        @deck.tags=tags
+      def make_tags(arg)
+        arg.tag_ids=params[:game][:tag_ids]
       end
 
       def get_deck
@@ -63,7 +58,7 @@ class GamesController < ApplicationController
         :user_id,
         :deck_id,
         :result,
-        :tags,
+        :tag_ids,
         :comment,
         :opponent_deck
         )
