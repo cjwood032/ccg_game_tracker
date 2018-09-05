@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
     validates :Username, uniqueness: true
     has_many :games
     has_many :decks
-    has_many :ccgs, through: :decks
+    has_many :ccg_users
+    has_many :ccgs, through: :ccg_users
 end
