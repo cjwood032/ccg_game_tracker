@@ -6,7 +6,7 @@ class GamesController < ApplicationController
         @games=current_user.games.select{|g| g.created_at.today?}
         @last_game=@games.last
         @games.reverse!
-        #binding.pry
+        binding.pry
     end
     def new
       @game=Game.new

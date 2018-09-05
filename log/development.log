@@ -29508,3 +29508,2064 @@ Processing by GamesController#show as HTML
 Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:23:42 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 232ms (Views: 205.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:23:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ccg Load (0.0ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22/edit" for 127.0.0.1 at 2018-09-05 09:23:55 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered users/_form.html.erb (97.7ms)
+  Rendered users/edit.html.erb within layouts/application (100.8ms)
+Completed 200 OK in 128ms (Views: 118.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/22" for 127.0.0.1 at 2018-09-05 09:23:58 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+vGuGXBOZzDZAOuT6hum1NmvATX8CsT1KkouRWDjK9WPyhzEj8ivvs7qcGLEs5SVAXSUAqVlQkN4eNfqfnOpRg==", "user"=>{"name"=>"more tests", "Username"=>"this name", "password"=>"[FILTERED]", "ccg_ids"=>["", "4"]}, "commit"=>"Update User", "id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", "this name"], ["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ?[0m  [["id", 4]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Destroy (0.3ms)[0m  [1m[31mDELETE FROM "decks" WHERE "decks"."user_id" = ? AND "decks"."ccg_id" IN (?, ?)[0m  [["user_id", 22], ["ccg_id", 13], ["ccg_id", 13]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/22
+Completed 302 Found in 12ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:23:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22/edit" for 127.0.0.1 at 2018-09-05 09:24:02 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/edit.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/users/22" for 127.0.0.1 at 2018-09-05 09:24:10 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vvfz0FurD9eHIpo2ehf0Y7ZwITBgKWN29+PM6MeXPLIjzEENpC3HWZDIAcdUv8Yibqu0BzlG5cCl0TVH2Qe+IQ==", "user"=>{"name"=>"more tests", "Username"=>"this name", "password"=>"[FILTERED]", "ccg_ids"=>["", "4", "13"]}, "commit"=>"Update User", "id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", "this name"], ["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$7wIA0Bfe6BfrBFKkiMnbRuQpPspsi1kzDO99h1IKGKywG2N.BnbKi"], ["updated_at", "2018-09-05 13:24:10.264650"], ["id", 22]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCcg Load (0.3ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" WHERE "ccgs"."id" IN (?, ?)[0m  [["id", 4], ["id", 13]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Create (0.3ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "ccg_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 22], ["ccg_id", 13], ["created_at", "2018-09-05 13:24:10.290206"], ["updated_at", "2018-09-05 13:24:10.290206"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/22
+Completed 302 Found in 88ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:24:10 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:24:13 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:32:21 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.5ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 55ms (Views: 50.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:33:05 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:33:09 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:33:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...in: 65px auto 0": expected "{", was ";"):
+    4:     <title>CCG Tracker</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/stylesheets/application.scss:345
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4552143555253314842_70301057150560'
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:33:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "... color: #0000ff": expected "{", was ";"):
+    4:     <title>CCG Tracker</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10:   <body>
+  
+app/assets/stylesheets/application.scss:344
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4552143555253314842_70301066873740'
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:34:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 131ms (Views: 127.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:34:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 128ms (Views: 122.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:34:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 113ms (Views: 108.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:34:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 109ms (Views: 104.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:34:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 102ms (Views: 98.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:34:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 100ms (Views: 96.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:35:09 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 100ms (Views: 96.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:36:05 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:36:26 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:39:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:40:09 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 123ms (Views: 119.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:40:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.3ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 154ms (Views: 148.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:40:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 114ms (Views: 109.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:41:41 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 117ms (Views: 113.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:41:50 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 113ms (Views: 109.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:42:08 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:42:13 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 102ms (Views: 98.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:45:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 117ms (Views: 112.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:46:05 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 112ms (Views: 108.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:46:32 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 112ms (Views: 107.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:46:41 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 114ms (Views: 110.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:47:26 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 136ms (Views: 131.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:47:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 115ms (Views: 110.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 09:47:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 119ms (Views: 115.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:31:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 139ms (Views: 134.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:32:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 156ms (Views: 151.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:32:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 120ms (Views: 116.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:32:47 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 114ms (Views: 109.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:33:07 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 120ms (Views: 116.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:33:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 108ms (Views: 103.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:33:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 124ms (Views: 121.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:33:41 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 118ms (Views: 113.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:34:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 126ms (Views: 122.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:34:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 149ms (Views: 143.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:34:30 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 111ms (Views: 107.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:34:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 117ms (Views: 113.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:34:42 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:35:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 120ms (Views: 116.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:35:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 112ms (Views: 107.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:35:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 148ms (Views: 143.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:36:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 107ms (Views: 102.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:36:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 110ms (Views: 106.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:36:25 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 106ms (Views: 102.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:36:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:36:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 110ms (Views: 106.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:36:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 111ms (Views: 107.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:38:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 124ms (Views: 119.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:39:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 109ms (Views: 105.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22/edit" for 127.0.0.1 at 2018-09-05 10:39:52 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered users/_form.html.erb (6.0ms)
+  Rendered users/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 37ms (Views: 24.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:40:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 110ms (Views: 105.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:40:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:41:07 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 130ms (Views: 125.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:41:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 121ms (Views: 117.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:43:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 117ms (Views: 112.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:43:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 111ms (Views: 107.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:43:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 115ms (Views: 111.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:43:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 106ms (Views: 102.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:43:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 141ms (Views: 136.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:44:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:44:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:44:57 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:45:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:45:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 114ms (Views: 110.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:47:30 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:48:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:49:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-09-05 10:50:02 -0400
+Processing by DecksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered decks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:50:05 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    10:                     <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    11:                     <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    12:                 </form>
+    13:                 <%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> 
+    14:             </td>
+    15: 
+    16:         <%else%>
+  
+app/views/games/index.html.erb:13:in `block in _app_views_games_index_html_erb___889553397381604972_70301065414580'
+app/views/games/index.html.erb:5:in `each'
+app/views/games/index.html.erb:5:in `_app_views_games_index_html_erb___889553397381604972_70301065414580'
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 10:50:10 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-09-05 10:50:11 -0400
+Processing by DecksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered decks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 25ms (Views: 19.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/decks/new" for 127.0.0.1 at 2018-09-05 10:50:14 -0400
+Processing by DecksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering decks/new.html.erb within layouts/application
+  [1m[36mCcg Load (0.3ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered decks/_form.html.erb (5.6ms)
+  Rendered decks/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 37ms (Views: 26.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/decks" for 127.0.0.1 at 2018-09-05 10:50:19 -0400
+Processing by DecksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DgKlVX15/cNY5ZNtrBhv+GQbraYmYDi18ua0bNow7UyGQzftCFbv29YrSIZwInXFHZe71hAnnnIn57i1BLTrdA==", "deck"=>{"name"=>"Third", "ccg_id"=>"4", "link"=>"link "}, "commit"=>"Create Deck"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDeck Create (0.3ms)[0m  [1m[32mINSERT INTO "decks" ("name", "wins", "losses", "user_id", "ccg_id", "link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Third"], ["wins", 0], ["losses", 0], ["user_id", 22], ["ccg_id", 4], ["link", "link "], ["created_at", "2018-09-05 14:50:19.835718"], ["updated_at", "2018-09-05 14:50:19.835718"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/decks/42
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 10:50:19 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  Rendered decks/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:50:34 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    10:                     <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    11:                     <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    12:                 </form>
+    13:                 <%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> 
+    14:             </td>
+    15: 
+    16:         <%else%>
+  
+app/views/games/index.html.erb:13:in `block in _app_views_games_index_html_erb___889553397381604972_70301047263620'
+app/views/games/index.html.erb:5:in `each'
+app/views/games/index.html.erb:5:in `_app_views_games_index_html_erb___889553397381604972_70301047263620'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 10:50:39 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  Rendered decks/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 10:50:41 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  Rendered decks/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-09-05 10:50:43 -0400
+Processing by DecksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered decks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:50:46 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    10:                     <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    11:                     <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    12:                 </form>
+    13:                 <%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> 
+    14:             </td>
+    15: 
+    16:         <%else%>
+  
+app/views/games/index.html.erb:13:in `block in _app_views_games_index_html_erb___889553397381604972_70301058627820'
+app/views/games/index.html.erb:5:in `each'
+app/views/games/index.html.erb:5:in `_app_views_games_index_html_erb___889553397381604972_70301058627820'
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:53:44 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 258862ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    11:                     <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    12:                     <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    13:                 </form>
+    14:                 <%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> 
+    15:             </td>
+    16: 
+    17:         <%else%>
+  
+app/views/games/index.html.erb:14:in `block in _app_views_games_index_html_erb___889553397381604972_70300991849280'
+app/views/games/index.html.erb:6:in `each'
+app/views/games/index.html.erb:6:in `_app_views_games_index_html_erb___889553397381604972_70300991849280'
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:58:09 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    11:                     <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    12:                     <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    13:                 </form>
+    14:                 <%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> 
+    15:             </td>
+    16: 
+    17:         <%else%>
+  
+app/views/games/index.html.erb:14:in `block in _app_views_games_index_html_erb___889553397381604972_70301045366120'
+app/views/games/index.html.erb:6:in `each'
+app/views/games/index.html.erb:6:in `_app_views_games_index_html_erb___889553397381604972_70301045366120'
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:58:25 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    11:                     <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    12:                     <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    13:                 </form>
+    14:                 <%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> 
+    15:             </td>
+    16: 
+    17:         <%else%>
+  
+app/views/games/index.html.erb:14:in `block in _app_views_games_index_html_erb___889553397381604972_70301059546480'
+app/views/games/index.html.erb:6:in `each'
+app/views/games/index.html.erb:6:in `_app_views_games_index_html_erb___889553397381604972_70301059546480'
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:59:00 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/games/delete" for 127.0.0.1 at 2018-09-05 10:59:02 -0400
+Processing by GamesController#delete as HTML
+  Parameters: {"authenticity_token"=>"xtpG3PvZO+wgE3cUjPyMeB5pbHqE+v41isO03KVOvsUCgO+6h72/+hsIinWPVNJVTbwX4/A5VkOdof3opZqEqg==", "user_id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."user_id" = ? ORDER BY "games"."id" DESC LIMIT ?[0m  [["user_id", 22], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 64]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/games
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:59:02 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 20ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-09-05 10:59:03 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering games/new.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/new.html.erb within layouts/application (55.6ms)
+Completed 200 OK in 82ms (Views: 71.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-09-05 10:59:27 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KEsJ9xMoOvo86ZBHfDhmFqsZskKotqmfJ7byiuOrebnsEaCRb0y+7AfybSZ/kDg7+MzJ29x1Aekw1Lu+439D1g==", "game"=>{"deck_id"=>"42", "result"=>"Loss", "comment"=>"COMMENT", "opponent_deck"=>"Opponent's deck", "tag_ids"=>["", "1", "5"]}, "user_id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+Unpermitted parameter: :tag_ids
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (?, ?)[0m  [["id", 1], ["id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "opponent_deck", "created_at", "updated_at", "comment") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 22], ["deck_id", 42], ["result", "Loss"], ["opponent_deck", "Opponent's deck"], ["created_at", "2018-09-05 14:59:27.163947"], ["updated_at", "2018-09-05 14:59:27.163947"], ["comment", "COMMENT"]]
+  [1m[36mGameTag Create (0.2ms)[0m  [1m[32mINSERT INTO "game_tags" ("game_id", "tag_id") VALUES (?, ?)[0m  [["game_id", 65], ["tag_id", 1]]
+  [1m[36mGameTag Create (0.1ms)[0m  [1m[32mINSERT INTO "game_tags" ("game_id", "tag_id") VALUES (?, ?)[0m  [["game_id", 65], ["tag_id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDeck Update (0.3ms)[0m  [1m[33mUPDATE "decks" SET "losses" = ?, "updated_at" = ? WHERE "decks"."id" = ?[0m  [["losses", 1], ["updated_at", "2018-09-05 14:59:27.177855"], ["id", 42]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering games/new.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 54ms (Views: 24.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 10:59:30 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 20.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games/65" for 127.0.0.1 at 2018-09-05 10:59:31 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  Rendered games/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 33ms (Views: 22.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/games/65" for 127.0.0.1 at 2018-09-05 11:13:20 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"65"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 65], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  Rendered games/show.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 94ms (Views: 61.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 11:13:23 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+Started GET "/games" for 127.0.0.1 at 2018-09-05 11:14:23 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 38]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 41]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."user_id" = ? AND "decks"."id" = ? LIMIT ?[0m  [["user_id", 22], ["id", 42], ["LIMIT", 1]]
+  [1m[36mCACHE Game Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."deck_id" = ? AND "games"."id" = ? LIMIT ?[0m  [["deck_id", 42], ["id", 65], ["LIMIT", 1]]
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7435032ms (Views: 34.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-09-05 13:18:21 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering games/new.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 13:19:09 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4028ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 13:19:16 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 2451ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for 127.0.0.1 at 2018-09-05 13:19:23 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering games/new.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/games" for 127.0.0.1 at 2018-09-05 13:19:32 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"55WRO6unFMPXygyIfdZpgp9nWqgzRQEGC4yu2rB8Ydojzzhd18OQ1ezR8el+fjevzLIhMUeGqXAc7ufusKhbtQ==", "game"=>{"deck_id"=>"42", "result"=>"Win", "comment"=>"", "opponent_deck"=>"", "tag_ids"=>["", "2", "3"]}, "user_id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+Unpermitted parameter: :tag_ids
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "result", "opponent_deck", "created_at", "updated_at", "comment") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 22], ["deck_id", 42], ["result", "Win"], ["opponent_deck", ""], ["created_at", "2018-09-05 17:19:32.433991"], ["updated_at", "2018-09-05 17:19:32.433991"], ["comment", ""]]
+  [1m[36mGameTag Create (0.1ms)[0m  [1m[32mINSERT INTO "game_tags" ("game_id", "tag_id") VALUES (?, ?)[0m  [["game_id", 66], ["tag_id", 2]]
+  [1m[36mGameTag Create (0.1ms)[0m  [1m[32mINSERT INTO "game_tags" ("game_id", "tag_id") VALUES (?, ?)[0m  [["game_id", 66], ["tag_id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDeck Update (0.3ms)[0m  [1m[33mUPDATE "decks" SET "wins" = ?, "updated_at" = ? WHERE "decks"."id" = ?[0m  [["wins", 1], ["updated_at", "2018-09-05 17:19:32.439799"], ["id", 42]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering games/new.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 52ms (Views: 26.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 13:19:34 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCACHE Deck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 1990ms (Views: 20.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/games/66" for 127.0.0.1 at 2018-09-05 13:19:44 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"66"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 66], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendered games/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 33ms (Views: 22.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-09-05 13:19:53 -0400
+Processing by GamesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = ?[0m  [["user_id", 22]]
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:19:55 -0400
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mCACHE Deck Load (0.0ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6495ms (Views: 26.5ms | ActiveRecord: 0.6ms)
+
+
+  Rendering games/index.html.erb within layouts/application
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (12.7ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendered games/index.html.erb within layouts/application (14.9ms)
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.3ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 7599738ms (Views: 33.5ms | ActiveRecord: 13.5ms)
+
+
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ccg Load (0.0ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-09-05 13:20:08 -0400
+Processing by DecksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered decks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:20:09 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  Rendered decks/show.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `tag' for #<Deck:0x007fe07b354e50>
+Did you mean?  tags
+               tags=
+               tag_ids
+               tag_ids=
+               tap):
+    14:         <%end%>
+    15:         <% @deck.games.each do |game|%>
+    16:             <% game.tags.each do |tag|%>
+    17:                 <%=tag.name%>:<%=@deck.tag.count%>
+    18:             <%end%>
+    19:         <%end%>
+    20:         <p><%= link_to 'Play some Games!', games_path %></p>
+  
+app/views/decks/show.html.erb:17:in `block (2 levels) in _app_views_decks_show_html_erb___3676979619364743273_70301048052700'
+app/views/decks/show.html.erb:16:in `block in _app_views_decks_show_html_erb___3676979619364743273_70301048052700'
+app/views/decks/show.html.erb:15:in `_app_views_decks_show_html_erb___3676979619364743273_70301048052700'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:22:33 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `make_tags' for #<Deck:0x007fe073690950>):
+  
+app/controllers/decks_controller.rb:9:in `show'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:22:56 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/models/deck.rb:27: formal argument cannot be an instance variable
+    def tag_count(@deck)
+                       ^):
+  
+app/models/deck.rb:27: formal argument cannot be an instance variable
+app/controllers/decks_controller.rb:55:in `set_deck'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:23:18 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `make_tags' for #<DecksController:0x007fe074b04698>):
+  
+app/controllers/decks_controller.rb:9:in `show'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:23:40 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `tag_count' for #<DecksController:0x007fe07c3194a8>):
+  
+app/controllers/decks_controller.rb:9:in `show'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:24:12 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `games' for nil:NilClass):
+  
+app/models/deck.rb:29:in `tag_count'
+app/controllers/decks_controller.rb:9:in `show'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:24:23 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `tag' for #<Deck:0x007fe07358a4e8>
+Did you mean?  tags
+               tags=
+               tag_ids
+               tag_ids=
+               tag_count
+               tap):
+    14:         <%end%>
+    15:         <% @deck.games.each do |game|%>
+    16:             <% game.tags.each do |tag|%>
+    17:                 <%=tag.name%>:<%=@deck.tag.count%>
+    18:             <%end%>
+    19:         <%end%>
+    20:         <p><%= link_to 'Play some Games!', games_path %></p>
+  
+app/views/decks/show.html.erb:17:in `block (2 levels) in _app_views_decks_show_html_erb___3676979619364743273_70301078399740'
+app/views/decks/show.html.erb:16:in `block in _app_views_decks_show_html_erb___3676979619364743273_70301078399740'
+app/views/decks/show.html.erb:15:in `_app_views_decks_show_html_erb___3676979619364743273_70301078399740'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:25:14 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  Rendered decks/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/christopherwood/Desktop/rails/ccg_game_tracker/app/views/decks/show.html.erb:16: syntax error, unexpected tIVAR, expecting ')'
+...er.append=( "#{tag.name}" @tags.count(tag) );@output_buffer....
+...                               ^):
+  
+app/views/decks/show.html.erb:16: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:25:39 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:         <% if @deck.link != nil %>
+    13:             <p><strong>Link:</strong> <a href=https://<%=@deck.link%> target="_blank" ><%=@deck.short_link%></a></p>
+    14:         <%end%>
+    15:         <%@tags.each do |tag| %>
+    16:             <%= tag.name%>:<%= @tags.count(tag) %>
+    17:         <%end%>
+    18:         <p><%= link_to 'Play some Games!', games_path %></p>
+  
+app/views/decks/show.html.erb:15:in `_app_views_decks_show_html_erb___3676979619364743273_70301071804480'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:26:25 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 64642ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:         <% if @deck.link != nil %>
+    13:             <p><strong>Link:</strong> <a href=https://<%=@deck.link%> target="_blank" ><%=@deck.short_link%></a></p>
+    14:         <%end%>
+    15:         <%@tags.each do |tag| %>
+    16:             <%= tag.name%>:<%= @tags.count(tag) %>
+    17:         <%end%>
+    18:         <p><%= link_to 'Play some Games!', games_path %></p>
+  
+app/views/decks/show.html.erb:15:in `_app_views_decks_show_html_erb___3676979619364743273_70300995428180'
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:27:33 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 2330ms (Views: 36.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:28:08 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 2198ms (Views: 19.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:28:41 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 70ms (Views: 23.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:29:05 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 16.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/decks/42" for 127.0.0.1 at 2018-09-05 13:29:23 -0400
+Processing by DecksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."deck_id" = ?[0m  [["deck_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 65]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "game_tags" ON "tags"."id" = "game_tags"."tag_id" WHERE "game_tags"."game_id" = ?[0m  [["game_id", 66]]
+  Rendering decks/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered decks/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 27.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:29:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ccg Load (0.0ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 33ms (Views: 26.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/decks" for 127.0.0.1 at 2018-09-05 13:29:45 -0400
+Processing by DecksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering decks/index.html.erb within layouts/application
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendered decks/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 37ms (Views: 26.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:33:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ccg Load (0.0ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:33:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ccg Load (0.0ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:34:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 73868ms (Views: 21.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:36:32 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 2763ms (Views: 19.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:37:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 49ms (Views: 34.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:38:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 33ms (Views: 27.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:38:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:39:41 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 130ms (Views: 125.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:39:50 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 125ms (Views: 121.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:40:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 116ms (Views: 111.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:40:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 118ms (Views: 113.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:41:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:42:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2018-09-05 13:42:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "decks" ON "ccgs"."id" = "decks"."ccg_id" WHERE "decks"."user_id" = ?[0m  [["user_id", 22]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.5ms)
+
+

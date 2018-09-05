@@ -6,6 +6,8 @@ class DecksController < ApplicationController
     end
 
     def show
+        @tags=@deck.tag_count
+        
         #binding.pry
     end
     def edit

@@ -10,12 +10,11 @@
         <p><strong>Wins:</strong> <%= @deck.wins %></p>
         <p><strong>Losses:</strong> <%= @deck.losses %></p>
         <% if @deck.link != nil %>
-            <p><strong>Link:</strong> <a href=https://<%=@deck.link%> target="_blank" ><%=@deck.short_link%></a></p>
+            <p><strong>Link:</strong> <br><a href=https://<%=@deck.link%> target="_blank" ><%=@deck.short_link%></a></p>
         <%end%>
-        <% @deck.games.each do |game|%>
-            <% game.tags.each do |tag|%>
-                <%=tag.name%>:<%=@deck.tag.count%>
-            <%end%>
+        <b>Tags:</b><br>
+        <%@tags.each do |tag| %>
+            <%= tag.name%>:<%= @tags.count(tag) %><br>
         <%end%>
         <p><%= link_to 'Play some Games!', games_path %></p>
         <%= link_to 'Back to decks list', decks_path,class: "btn btn-primary btn-light" %>
