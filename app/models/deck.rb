@@ -1,7 +1,7 @@
 class Deck < ActiveRecord::Base
     belongs_to :ccg
     has_many :games
-    has_many :users
+    belongs_to :user
     has_many :games
     has_many :tags, through: :games
 

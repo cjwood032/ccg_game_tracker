@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :decks_index]
 
   def show
     @message = params[:message] if params[:message]
@@ -11,6 +11,9 @@ class UsersController < ApplicationController
     @user = User.new
     current_user=@user
     #binding.pry
+  end
+
+  def index
   end
 
   def create
@@ -26,7 +29,10 @@ class UsersController < ApplicationController
     end
   end
   
-  
+  def decks_index
+    @decks=@user.decks
+    render template: 'decks/index'
+  end
   
   def edit
   end
