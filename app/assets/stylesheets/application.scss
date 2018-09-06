@@ -353,6 +353,11 @@
    color: #5b8ffb;
    font-weight: 150;
  }
+
+ .info sm {
+   color: black;
+   font-size: 10px;
+ }
  /*
    Hack to remove background from Mobile Safari.
    Can't use it globally since it destroys checkboxes in Firefox

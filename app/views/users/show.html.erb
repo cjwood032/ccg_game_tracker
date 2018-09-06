@@ -10,16 +10,24 @@
 
   <div class="info">
     <p><strong>Username:</strong></p><b> <%= @user.Username %></b>
-    <p><strong>Name:</strong></p><b> <%= @user.name %></b>
-    <p><strong>CCGs you play:</p></strong><b> <% @user.ccg_ids.uniq.each do |g| %>
+    <%if @user==current_user%>
+      <p><strong>Name:</strong></p><b> <%= @user.name %></b>
+    <%end%>
+    <p><strong>CCGs:</p></strong><b> <% @user.ccg_ids.uniq.each do |g| %>
       <%=Ccg.find(g).name%><br>
     <%end%>
     </b>
     <br></br>
     <a>
-    <%= link_to 'Edit User', [:edit, @user] %> <b>-</b>
-    <%= link_to 'View/Edit your decks', decks_path %> <b>-</b>
-    <%= link_to 'Play some Games!', games_path %>
+    <%if @user==current_user%>
+      <%= link_to 'Edit User', [:edit, @user] %> <c>-</c>
+      <%= link_to 'View/Edit your decks', decks_path %> <c>-</c>
+      <%= link_to 'Play Games', games_path %> <c>-</c>
+      <%= link_to 'Browse users', users_path %>
+    <%else%>
+      <%= link_to "View #{@user.Username}'s decks",  "./#{@user.id}/decks_index"%> <b>-</b>
+    <%end%>
+    
     </a>
   </div>
 </div>

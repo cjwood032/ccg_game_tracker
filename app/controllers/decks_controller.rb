@@ -2,6 +2,7 @@ class DecksController < ApplicationController
     before_action :set_deck, only: [:show, :edit, :update, :destroy]
     def index
         @decks=current_user.decks
+        @user=current_user
         #binding.pry
     end
 
@@ -19,9 +20,9 @@ class DecksController < ApplicationController
     def create
         @deck= Deck.new(deck_params)
         @deck.user_id=current_user.id
-        @deck.wins=0
-        @deck.losses=0
-        #binding.pry
+        #@deck.wins=0
+        #@deck.losses=0
+        binding.pry
         
 
 
@@ -29,12 +30,13 @@ class DecksController < ApplicationController
             if @deck.save
               format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
             else
-              format.html { render :new }
+              format.html { render :new, notice: 'Deck was not created' }
             end
           end
     end
     
     def update
+        binding.pry
         respond_to do |format|
             if @deck.update(deck_params)
               format.html { redirect_to @deck, notice: 'Deck was successfully updated.' }

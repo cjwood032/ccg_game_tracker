@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "/games/delete", to: "games#delete"
   post "/decks/:id/delete", to: "decks#destroy"
   post"/users/:id/delete", to: "users#destroy"
+  get"/users/:id/decks_index", to: "users#decks_index"
   get '/auth/google_oauth2/callback' => 'sessions#gcreate'
   get '/auth/facebook/callback' => 'sessions#gcreate'
   resources :decks
