@@ -35,6 +35,14 @@ class UsersController < ApplicationController
   end
   
   def edit
+    respond_to do |format|
+      binding.pry
+      if @user==current_user
+        format.html { render :edit, notice: "Edit" }
+      else
+        format.html { redirect_to user_path(@user), notice: "You can only edit yourself" }
+      end
+    end
   end
 
   def update
