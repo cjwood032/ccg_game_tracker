@@ -4,7 +4,7 @@ class Deck < ActiveRecord::Base
     belongs_to :user
     has_many :games
     has_many :tags, through: :games
-
+    scope :wlratio, -> {where("decks.wins>decks.losses")} 
     def record_game(result)
         if result == "Win" 
             self.update(:wins=> self.wins+=1)
@@ -33,6 +33,7 @@ class Deck < ActiveRecord::Base
         end
         tags  
     end
+
 
 
 

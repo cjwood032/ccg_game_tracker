@@ -51,7 +51,9 @@ class DecksController < ApplicationController
           format.html { redirect_to decks_url, notice: 'Deck was successfully deleted.' }
         end
     end
-    
+    def good
+        @user=current_user
+    end
     
     private
     def set_deck

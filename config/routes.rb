@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback' => 'sessions#gcreate'
   get '/auth/facebook/callback' => 'sessions#gcreate'
   post '/decks/:deck_id/games', to: "games#create_withdeck"
+  get '/decks/wlratio', to: "decks#good"
   resources :decks do
     resources :games
   end

@@ -55,9 +55,13 @@ class GamesController < ApplicationController
           format.html { redirect_to @route, notice: 'Game was successfully recorded.' }
         else
           @decks=current_user.decks
-          format.html { redirect_to @route, notice: 'Game was not recorded!' }
+          @message="You need to select a result."
+          #binding.pry
+          format.html { redirect_to @route, notice: 'Game was not recorded, you need to select a result' }
         end
       end
+    end
+    def good
     end
 
     private

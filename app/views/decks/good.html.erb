@@ -1,0 +1,2 @@
+<h2> Your decks that have a W/L >= 1 <h2>
+<%= render partial: 'decks/decks', locals: {user:current_user, decks:current_user.decks.wlratio} %>
