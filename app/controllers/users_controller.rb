@@ -36,11 +36,11 @@ class UsersController < ApplicationController
   
   def edit
     respond_to do |format|
-      binding.pry
+      #binding.pry
       if @user==current_user
-        format.html { render :edit, notice: "Edit" }
+        format.html { render :edit}
       else
-        format.html { redirect_to user_path(@user), notice: "You can only edit yourself" }
+        format.html { redirect_to user_path(@user), notice: "You can only edit your own page!" }
       end
     end
   end

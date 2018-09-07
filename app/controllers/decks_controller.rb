@@ -8,7 +8,6 @@ class DecksController < ApplicationController
 
     def show
         @tags=@deck.tag_count
-        
         #binding.pry
     end
     def edit
@@ -20,8 +19,8 @@ class DecksController < ApplicationController
     def create
         @deck= Deck.new(deck_params)
         @deck.user_id=current_user.id
-        #@deck.wins=0
-        #@deck.losses=0
+        @deck.wins=0
+        @deck.losses=0
         binding.pry
         
 
@@ -52,6 +51,7 @@ class DecksController < ApplicationController
           format.html { redirect_to decks_url, notice: 'Deck was successfully deleted.' }
         end
     end
+    
     
     private
     def set_deck

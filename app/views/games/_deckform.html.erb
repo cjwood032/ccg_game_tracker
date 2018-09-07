@@ -1,0 +1,42 @@
+
+
+<%= form_for [@deck, @game] do |g| %>
+  
+    <div class="form-group">
+
+
+    
+        Deck:
+        <a><b><%=@deck.name%></a></b><br>
+        
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Result</label>
+        <div class="form-check form-check-inline">
+            <%= g.radio_button(:result, "Win") %>
+            <%= label_tag(:result_win, "Win") %>
+            <%= g.radio_button(:result, "Loss") %>
+            <%= label_tag(:result_loss, "Loss") %>
+        </div>
+        <h4>optional:</h4>
+       
+          <%= g.label :Comments %>
+          <br>
+          <%= g.text_area :comment, class: "form-control" %>
+          <br>
+
+    <div class="form-check form-check-inline">
+        <b><%= g.label :opponent_deck, "Opponent's deck" %></b><br>
+            <%= g.text_field :opponent_deck, class: "form-control"%></div>
+    
+    </div>
+    <h4>Tags</h4>
+    <%= g.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %>
+
+    
+    
+    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+        <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+    <input class: "btn btn-primary" type="submit" value="Record Game" >
+    
+    </div>
+<%end%>
+
