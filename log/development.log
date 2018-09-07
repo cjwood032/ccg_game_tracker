@@ -36234,3 +36234,171 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 53ms (Views: 43.7ms | ActiveRecord: 2.7ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at /Users/christopherwood/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:59)
+Started GET "/users/24/edit" for 127.0.0.1 at 2018-09-07 11:07:49 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.7ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 24]]
+  Rendered users/_form.html.erb (139.7ms)
+  Rendered users/edit.html.erb within layouts/application (144.3ms)
+Completed 200 OK in 359ms (Views: 327.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2018-09-07 11:09:43 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.6ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 24]]
+  Rendered users/_form.html.erb (32.7ms)
+  Rendered users/edit.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 11112ms (Views: 54.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2018-09-07 11:10:35 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.5ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 24]]
+  Rendered users/_form.html.erb (29.6ms)
+  Rendered users/edit.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 237847ms (Views: 53.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2018-09-07 11:15:21 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.7ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (25.8ms)
+  Rendered users/edit.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 65ms (Views: 44.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-09-07 11:15:25 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2018-09-07 11:15:31 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (5.5ms)
+  Rendered users/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-09-07 11:15:39 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.5ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (22.6ms)
+  Rendered users/edit.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 57ms (Views: 40.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-09-07 11:15:51 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (19.3ms)
+  Rendered users/edit.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 10693ms (Views: 39.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2018-09-07 11:16:08 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 7858ms (Views: 25.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/24/edit" for 127.0.0.1 at 2018-09-07 11:16:31 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/24
+Completed 302 Found in 2972ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/24" for 127.0.0.1 at 2018-09-07 11:16:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 24]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 41ms (Views: 31.4ms | ActiveRecord: 1.4ms)
+
+
