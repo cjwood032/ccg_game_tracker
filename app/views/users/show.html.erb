@@ -23,7 +23,7 @@
       <%= link_to 'Edit User', [:edit, @user] %> <c>-</c>
       <%= link_to 'View/Edit your decks', decks_path %> <c>-</c>
       <%= link_to 'Play Games', games_path %> <c>-</c>
-      <%= link_to 'Browse users', users_path %>
+      <%= link_to 'Browse Users', users_path %>
     <%else%>
       <%= link_to "View #{@user.Username}'s decks",  "./#{@user.id}/decks_index"%> <b>-</b>
     <%end%>

@@ -1,7 +1,11 @@
 <strong>Play a game! </strong>
 
 <p id="notice"><%= notice %></p>
-<p><%= link_to 'Play Games!', new_game_path %></p>
+<% if @deck %>
+<p><%= link_to 'Play Games!', new_deck_game_path(@deck) %></p>
+<%else%>
+    <p><%= link_to 'Play Games!', new_game_path %></p>
+<%end%>
 <% if @games%>
     <%@games.each do |game| %> 
         <div>
