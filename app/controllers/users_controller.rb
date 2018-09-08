@@ -4,13 +4,11 @@ class UsersController < ApplicationController
   def show
     @message = params[:message] if params[:message]
     @message ||= false
-    #binding.pry
   end
 
   def new
     @user = User.new
     current_user=@user
-    #binding.pry
   end
 
   def index
@@ -36,7 +34,6 @@ class UsersController < ApplicationController
   
   def edit
     respond_to do |format|
-      #binding.pry
       if @user==current_user
         format.html { render :edit}
       else

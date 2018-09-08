@@ -4,6 +4,8 @@ class Deck < ActiveRecord::Base
     belongs_to :user
     has_many :games
     has_many :tags, through: :games
+    validates :name, presence: true
+    validates :ccg, presence: true
     scope :wlratio, -> {where("decks.wins>decks.losses")} 
     def record_game(result)
         if result == "Win" 
