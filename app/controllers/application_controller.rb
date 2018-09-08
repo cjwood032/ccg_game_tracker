@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  use OmniAuth::Strategies::Developer
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
   before_action :current_user
