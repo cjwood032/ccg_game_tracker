@@ -1,6 +1,9 @@
-<body>
-<section class="new-deck">
-<h1>New Deck</h1>
-<%= render 'form' %>
-</section>
-</body>
+<div class="info">
+    <h1>New Deck</h1>
+    <%if current_user.ccgs.length>0%>
+        <%= render 'form' %>
+    <%else%>
+        <n>You need to choose CCGS you play in order to create decks</n>
+        <%= link_to 'Edit User', edit_user_path(current_user) %>
+    <%end%>
+</div>

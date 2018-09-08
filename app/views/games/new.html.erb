@@ -6,7 +6,12 @@
     <p><%= link_to 'Use a different deck', new_game_path %></p>
     <%= render 'deckform'%>
 <%else%>
-    <%= render 'form'%>
+    <%if current_user.decks.length>0%>
+        <%= render 'form'%>
+    <%else%>
+        <n>You need a deck to play a game!</n>
+        <%= link_to 'New Deck', new_deck_path(current_user) %>
+    <%end%>
 <%end%>
 
  
