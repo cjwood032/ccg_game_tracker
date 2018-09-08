@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       end
     
       def create
-        @user = User.find_by(name: params[:name])
+        @user = User.find_or_create_by(auth_hash)
+        current_user = @user
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect_to user_path(@user), notice: "Welcome back, and good luck!"
@@ -31,6 +32,9 @@ class SessionsController < ApplicationController
       end
       private
       def auth
+        request.env['omniauth.auth']
+      end
+      def auth_hash
         request.env['omniauth.auth']
       end
 end
