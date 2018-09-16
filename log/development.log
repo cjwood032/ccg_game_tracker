@@ -44876,3 +44876,45 @@ Processing by GamesController#index as HTML
 Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/games/new" for 127.0.0.1 at 2018-09-16 16:10:21 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering games/new.html.erb within layouts/application
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered games/_form.html.erb (123.8ms)
+  Rendered games/new.html.erb within layouts/application (144.0ms)
+Completed 200 OK in 433ms (Views: 378.4ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-09-16 16:10:36 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2XX42rpxpXAFsUQPS0+L4vryUL1S5fq4QhStFSyRf4uJD6WL5kG2QJIS3lfb66ysR6Pbr3lRiww41uyF30B8Fw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-16 16:10:36 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
