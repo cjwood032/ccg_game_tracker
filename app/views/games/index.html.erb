@@ -16,7 +16,19 @@
                     <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
                 </form>
                 <%if game.deck%>
-                    <td><%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> </td>
+                    <td><%= link_to "#{game.deck.name}", game_path(game) %> :  </td>
+                    <div class="popover__wrapper">                    
+                        <h4 class="popover__title"><%=game.result %></h4>
+                        <div class="push popover__content">
+                            <p class="popover__message">
+                            <%game.tags.each do |tag|%>
+                                <%=tag.name%>
+                            <%end%><br>
+                            <%if game.comment%>
+                                <%=game.comment%>
+                            <%end%></p>
+                        </div>
+                    </div>
                 <%else%>
                     <td>Deck was deleted: <%=game.result %> </td>
                 <%end%>
@@ -24,7 +36,19 @@
 
         <%else%>
             <%if game.deck%>
-                <td><%= link_to "#{game.deck.name}", game_path(game) %> : <%=game.result %> </td>
+                <td><%= link_to "#{game.deck.name}", game_path(game) %> :  </td>
+                <div class="popover__wrapper">                    
+                    <h4 class="popover__title"><%=game.result %></h4>
+                    <div class="push popover__content">
+                        <p class="popover__message">
+                        <%game.tags.each do |tag|%>
+                            <%=tag.name%>
+                        <%end%><br>
+                        <%if game.comment%>
+                            <%=game.comment%>
+                        <%end%></p>
+                    </div>
+                </div>
             <%else%>
                 <td>Deck was deleted: <%=game.result %> </td>
             <%end%>
