@@ -9,9 +9,9 @@
 <div class="center">
 
   <div class="info">
-    <p><strong>Username:</strong></p><b> <%= @user.Username %></b>
+    <p><strong>name:</strong></p><b> <%= @user.Username %></b>
     <%if @user==current_user%>
-      <p><strong>Name:</strong></p><b> <%= @user.name %></b>
+      <p><strong>Username:</strong></p><b> <%= @user.Username %></b>
     <%end%>
     <p><strong>CCGs:</p></strong><b> <% @user.ccg_ids.uniq.each do |g| %>
       <%=Ccg.find(g).name%><br>

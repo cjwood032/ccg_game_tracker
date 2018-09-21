@@ -45481,3 +45481,537 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 203ms (Views: 198.3ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/users/3/edit" for 127.0.0.1 at 2018-09-21 08:26:01 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.5ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (152.8ms)
+  Rendered users/edit.html.erb within layouts/application (157.4ms)
+Completed 200 OK in 367ms (Views: 341.0ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:26:34 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msxwzdpC8FUVex2e8ZiizXpTQ2bpwgd3A3Za+GUQdwNyfoKzrnO1bqXVTyDC14DVH4U9UruUcNhCtlVxQt2xYQ==", "user"=>{"name"=>"Christopher Wood", "Username"=>"A User Name", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", "A User Name"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "Username" = ?, "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["Username", "A User Name"], ["password_digest", "$2a$10$Bfosfob.PWQzlWismzkWG.voJ9P.v5hE6sx2RhdGRO4FMLIPLvnaC"], ["updated_at", "2018-09-21 12:26:34.323808"], ["id", 3]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ?[0m  [["id", 5]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCcgUser Create (0.7ms)[0m  [1m[32mINSERT INTO "ccg_users" ("ccg_id", "user_id") VALUES (?, ?)[0m  [["ccg_id", 5], ["user_id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 80ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:26:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-09-21 08:26:36 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6ClR8KRXBEh2cQPvbMtNEM0M7/WBwFbuptmr5VXb8ZG4Uwyh+GcXeOHSmbf8b2pecF1k56p0J1rcG+p1pgryDQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 08:26:36 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:26:38 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:26:39 -0400
+Started GET "/auth/facebook/callback?code=AQBQD2lfM9wEvE7EvLbW8eij3LbXGCVgKDbwS8ns9Yh7g00c8uWEcomLix9OJWgAkBdsgj1U6SoKale-LuHeP3YEiYXtwwgJxAyTf3yL30cnkBDkVIqjRVK0pMGaFJejBbSKCmucRuT2-E6RDJqcphghrCHtGTKdKCd3dD7vmC7SJ-O97NP2PIqBoSqv3eBM7-bsmg59EizOxG6pptO4fVHmaYn3pAw87tSRU0SR98SsePhhmIMXGArs6lcKLTp5GzgSNiIRqc7uArOWeluP_CJPTySps2GV6iOXtQ4c8ZpPIjSj4la1sog6kHfuiC-UEHQ2wRW1TJjNf_GYyCG-14dK&state=a877c229d1d86a559e35c6c1c103d2e1c6bac98486d2cbec" for 127.0.0.1 at 2018-09-21 08:26:39 -0400
+Processing by SessionsController#gcreate as HTML
+  Parameters: {"code"=>"AQBQD2lfM9wEvE7EvLbW8eij3LbXGCVgKDbwS8ns9Yh7g00c8uWEcomLix9OJWgAkBdsgj1U6SoKale-LuHeP3YEiYXtwwgJxAyTf3yL30cnkBDkVIqjRVK0pMGaFJejBbSKCmucRuT2-E6RDJqcphghrCHtGTKdKCd3dD7vmC7SJ-O97NP2PIqBoSqv3eBM7-bsmg59EizOxG6pptO4fVHmaYn3pAw87tSRU0SR98SsePhhmIMXGArs6lcKLTp5GzgSNiIRqc7uArOWeluP_CJPTySps2GV6iOXtQ4c8ZpPIjSj4la1sog6kHfuiC-UEHQ2wRW1TJjNf_GYyCG-14dK", "state"=>"a877c229d1d86a559e35c6c1c103d2e1c6bac98486d2cbec"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117503569199947"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:26:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2018-09-21 08:27:53 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (29.3ms)
+  Rendered users/edit.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 72ms (Views: 50.5ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:27:56 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JlmdGrdwTClLZzuNGU58jAgdlMytZ1sRcxS70LmqPsXO629kw0EJEvvJaTMqAV6Ubcvq+P8xLL4y1LRZnmf4pw==", "user"=>{"name"=>"Christopher Wood", "Username"=>"", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", ""], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "Username" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["Username", ""], ["updated_at", "2018-09-21 12:27:56.375589"], ["id", 3]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ?[0m  [["id", 5]]
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 15ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:27:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-09-21 08:27:59 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"E1nGM8eXDFjxmTWL2sUJ0FFo1kE0HpQ73abRoW/cF0BDI5tim6cfaGY6r9NKYS6e7DldUx+q5Y+nZJAxnA0U3A=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 08:27:59 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:28:01 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:28:02 -0400
+Started GET "/auth/facebook/callback?code=AQCtqDn64QrofiiSV5moaBYztbNLGC8oE281WRhhPsNfb-z5kpzbEIRy9q2Q4K08s7Xmvo79YWf0KzuQt2dWjg1u5MTyYzKwbFwM_JrKiDGB_yIv1dagMbCKuKtsTna0U7e3HV-6XsCIz5I_BUgksNm5cJNeMxbhigFz75Udg9zj_MgVwki_iFRzL3cc2fwwVjf7AunRE995gBmgxQUbBGeH45RHw5nvmCmjay9vzWg-KCBQ5siofZHF_PtyAxCtBcHhMlF8XxCtn1RT_-RO2Ehy68lOoWA7xtiI8WIqNM16ljyeOScTTt-NAYwQat-Xb-ceKPQG881gqeFE-tIjex9P&state=add9393b84a315a35c1fd4265274c763927cce862bc4fd89" for 127.0.0.1 at 2018-09-21 08:28:02 -0400
+Processing by SessionsController#gcreate as HTML
+  Parameters: {"code"=>"AQCtqDn64QrofiiSV5moaBYztbNLGC8oE281WRhhPsNfb-z5kpzbEIRy9q2Q4K08s7Xmvo79YWf0KzuQt2dWjg1u5MTyYzKwbFwM_JrKiDGB_yIv1dagMbCKuKtsTna0U7e3HV-6XsCIz5I_BUgksNm5cJNeMxbhigFz75Udg9zj_MgVwki_iFRzL3cc2fwwVjf7AunRE995gBmgxQUbBGeH45RHw5nvmCmjay9vzWg-KCBQ5siofZHF_PtyAxCtBcHhMlF8XxCtn1RT_-RO2Ehy68lOoWA7xtiI8WIqNM16ljyeOScTTt-NAYwQat-Xb-ceKPQG881gqeFE-tIjex9P", "state"=>"add9393b84a315a35c1fd4265274c763927cce862bc4fd89"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117503569199947"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 81355ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:29:24 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-09-21 08:30:29 -0400
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/christopherwood/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/lazy_load_hooks.rb:71)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"soF9UwG7hVt1He2SHTfDnGEggz8yhJelGhCvSJWdJNXi+yACXYuWa+K+d8qNk+TS3HEILRkw5hFg0u7YZkwnSQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 08:30:30 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 170ms (Views: 168.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:30:33 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:30:34 -0400
+Started GET "/auth/facebook/callback?code=AQD_kfcoQLLPNM0kFusqvkP8hANgeKBmbKJldu51qY-QKDzhDat2g2TDm5f0gJJWsaV_EPjZwhuHLHB-bzcQGkr8yVqXGKUO5KkpYY0uT6pn73XcReyheou3rsjc0wc4fFRlmI_MbXFs3eLXio8CbUsGkZyDQ-K4op2ISuf58FcHGg8m1Z3ZyKWdwhq42H7dNef_5AAVfnlGzNhj1qOl5jnYRUNtPcY6pekWk7Am1uSE2AZfGpXGVvQHOutZmqzU9tQNwofIPBY5cNAysmOeenT8zJGUUQjarqLta6sknKVwL5Dtjb9SjZNA1z0Xxi_ZRll76CvJEopK7VD01d2BKp_J&state=1aaeeb9d1bb15257dfac0faa6e2f7de53ae74fcb2aa28323" for 127.0.0.1 at 2018-09-21 08:30:35 -0400
+Processing by SessionsController#gcreate as HTML
+  Parameters: {"code"=>"AQD_kfcoQLLPNM0kFusqvkP8hANgeKBmbKJldu51qY-QKDzhDat2g2TDm5f0gJJWsaV_EPjZwhuHLHB-bzcQGkr8yVqXGKUO5KkpYY0uT6pn73XcReyheou3rsjc0wc4fFRlmI_MbXFs3eLXio8CbUsGkZyDQ-K4op2ISuf58FcHGg8m1Z3ZyKWdwhq42H7dNef_5AAVfnlGzNhj1qOl5jnYRUNtPcY6pekWk7Am1uSE2AZfGpXGVvQHOutZmqzU9tQNwofIPBY5cNAysmOeenT8zJGUUQjarqLta6sknKVwL5Dtjb9SjZNA1z0Xxi_ZRll76CvJEopK7VD01d2BKp_J", "state"=>"1aaeeb9d1bb15257dfac0faa6e2f7de53ae74fcb2aa28323"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117503569199947"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 7827ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:30:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 123ms (Views: 105.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 08:30:53 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 19.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:30:54 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:30:55 -0400
+Started GET "/auth/facebook/callback?code=AQAhbZgv86Z-laHuOdQ9rCKJkLIxPA2U99NtBcp3y8OghSIFbsg_CeUwy3SkndM-juOfPynNMulTPWob1x8b7VHlusJaXoRWFJvd-HCAuGAODGN_1pQVT-AzR4ic0s4LSuCnzqxcIAoARvDYJcsvpw9CKD4TaFpaHRdqiU5N2MnweX8UpAQ1btNwopI-a4Ac7hmxH-FlqKWnWak3pF-cN27dMbzYcKcvPlNMh1-8wGv2JDJUIIz5m-9X4gSsX6beVkAA5_KEICYa5F3kp7vadO6noMde7HrwSt_hKtQkFyzj4VOdJbR5TDFT5KJQpZ4RPoJrsFa78zzo6vscxCbmyvWD&state=cd6706fd54df00a7af02cc2866f9cb740f2ade47f9cd6343" for 127.0.0.1 at 2018-09-21 08:30:55 -0400
+Processing by SessionsController#gcreate as HTML
+  Parameters: {"code"=>"AQAhbZgv86Z-laHuOdQ9rCKJkLIxPA2U99NtBcp3y8OghSIFbsg_CeUwy3SkndM-juOfPynNMulTPWob1x8b7VHlusJaXoRWFJvd-HCAuGAODGN_1pQVT-AzR4ic0s4LSuCnzqxcIAoARvDYJcsvpw9CKD4TaFpaHRdqiU5N2MnweX8UpAQ1btNwopI-a4Ac7hmxH-FlqKWnWak3pF-cN27dMbzYcKcvPlNMh1-8wGv2JDJUIIz5m-9X4gSsX6beVkAA5_KEICYa5F3kp7vadO6noMde7HrwSt_hKtQkFyzj4VOdJbR5TDFT5KJQpZ4RPoJrsFa78zzo6vscxCbmyvWD", "state"=>"cd6706fd54df00a7af02cc2866f9cb740f2ade47f9cd6343"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117503569199947"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:30:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-09-21 08:31:16 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/i46SCtGy/OzX+Rhj6GXuP6iS9zJupZJwcCjbsxFo6SuVGcZd3bYwyT8fjkfBbD2Q/PAzuIO5/27AuL+P5SgOA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 08:31:16 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:31:17 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:31:18 -0400
+Started GET "/auth/facebook/callback?code=AQDptLa8cpyzd7vi90NFOu5DADciQgHa9q_u_axzDrBBzp8R7bVpy9_oUbS6zL0BNokZIB6FABMEoEtQOjyQFLIseEeMGxdl9zXml6QhgwCLiF0b07fM7fRYTtmGtsuc4OUADz2AMik1H3r4kwSyCHO5nkYyO2MH3k6qSAYvibJMYBI-VolDu3hLDZKlhf32vKvQKoHa05id5KouUcyukPw5d_-f-FmuVgi31yP-KpEXp6_VEC9vzQrrMCNOF85oNP8R33P3KwHtKoCeaex6J1BhNAr1mV4QPXA7vNw1ZRNB6wSeulm-pbmrtEGsm5JTYQLIM28o6nT5MLTP8h-p1rmY&state=11c9530bb377f34b10073ad46475fd4e883511aa7e4fe3f7" for 127.0.0.1 at 2018-09-21 08:31:18 -0400
+Processing by SessionsController#gcreate as HTML
+  Parameters: {"code"=>"AQDptLa8cpyzd7vi90NFOu5DADciQgHa9q_u_axzDrBBzp8R7bVpy9_oUbS6zL0BNokZIB6FABMEoEtQOjyQFLIseEeMGxdl9zXml6QhgwCLiF0b07fM7fRYTtmGtsuc4OUADz2AMik1H3r4kwSyCHO5nkYyO2MH3k6qSAYvibJMYBI-VolDu3hLDZKlhf32vKvQKoHa05id5KouUcyukPw5d_-f-FmuVgi31yP-KpEXp6_VEC9vzQrrMCNOF85oNP8R33P3KwHtKoCeaex6J1BhNAr1mV4QPXA7vNw1ZRNB6wSeulm-pbmrtEGsm5JTYQLIM28o6nT5MLTP8h-p1rmY", "state"=>"11c9530bb377f34b10073ad46475fd4e883511aa7e4fe3f7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117503569199947"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 46789ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:32:05 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:32:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 45ms (Views: 30.9ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-09-21 08:32:35 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j4aacuWtVoMEF9vqSUzD/bx7ERK0ykpl4vG4kpKLpOTf/McjuZ1Fs5O0QbLZ6OSzASqaAJ9+O9GYM/kCYVqneA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 08:32:35 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:32:37 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-09-21 08:32:37 -0400
+Started GET "/auth/facebook/callback?code=AQCOVmWaIkk5Pb8M0VPGzpXOJsaAnQeoWi__F01GBh4QbED2V00ycz7bnDWVNClgBWD6LyxXd4amXbazfZSo1SOvpIVecjzWqPqoD12zQi8hXmVmzrnCfyf1nnmA8z-24dCoiMQ-K_SI2-2_vLL9--ByCNqe1K0e7wd2L_3CkgCYp-g1l912gTBDw2iN8FaD16nKAqkAish57iWEJ1SOBoYCZXhWCNSUjjWHAswWjHKuUk8cF6w6sKkV5dJNJQMm_G7YbRk2EMEN23np9IWXehkKEWmdqDXRfQstJL7KTp2AkWohVaUg3q3Mf0KVklmPxkSZQYMXtUHBW1prGrMfu893&state=b76ed208db20236d52c70967ffbc3b7eb46a774d61678f70" for 127.0.0.1 at 2018-09-21 08:32:38 -0400
+Processing by SessionsController#gcreate as HTML
+  Parameters: {"code"=>"AQCOVmWaIkk5Pb8M0VPGzpXOJsaAnQeoWi__F01GBh4QbED2V00ycz7bnDWVNClgBWD6LyxXd4amXbazfZSo1SOvpIVecjzWqPqoD12zQi8hXmVmzrnCfyf1nnmA8z-24dCoiMQ-K_SI2-2_vLL9--ByCNqe1K0e7wd2L_3CkgCYp-g1l912gTBDw2iN8FaD16nKAqkAish57iWEJ1SOBoYCZXhWCNSUjjWHAswWjHKuUk8cF6w6sKkV5dJNJQMm_G7YbRk2EMEN23np9IWXehkKEWmdqDXRfQstJL7KTp2AkWohVaUg3q3Mf0KVklmPxkSZQYMXtUHBW1prGrMfu893", "state"=>"b76ed208db20236d52c70967ffbc3b7eb46a774d61678f70"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "117503569199947"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3/edit
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2018-09-21 08:32:38 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (102.7ms)
+  Rendered users/edit.html.erb within layouts/application (105.8ms)
+Completed 200 OK in 131ms (Views: 129.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:34:35 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p0ERw6/ny+eYxJCDpNJu1NNxVmMAcqSXO1b7uys1W+73O0yS89fY1w9nCts0dkmabiDdcSvG1SNBlLor2ORYcg==", "user"=>{"name"=>"Christopher Wood", "Username"=>"", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", ""], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (16.8ms)
+  Rendered users/edit.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 52ms (Views: 34.9ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:35:41 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kI4SLg3XA49Vy8zjO2RLuP9ap5ZOkpyBSLSVMez6gCHA9E9/UecQv8JoVrurwGz2QgsshGUm7TUydtShHyuDvQ==", "user"=>{"name"=>"Christopher Wood", "Username"=>"", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", ""], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:35:49 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eIJ+ET4yztfHF+INI4pY8aW8UiE0y8xyX9l7aRB1A2so+CNAYgLd51C0eFWzLn+/GO3ZMx9/vcYlGzr546QA9w==", "user"=>{"name"=>"Christopher Wood", "Username"=>"", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", ""], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (5.4ms)
+  Rendered users/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 31ms (Views: 25.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:35:53 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2018-09-21 08:35:57 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (8.6ms)
+  Rendered users/edit.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:36:06 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RhWIxAJ471usRMmsNGy1gtekrix6Ob/nONmiHXRVMCCup3q6dkmqYBzqmxIHI5easnLQGChvyEh5Ga2UU5j2Qg==", "user"=>{"name"=>"Christopher Wood", "Username"=>"", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", ""], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (6.3ms)
+  Rendered users/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:36:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2018-09-21 08:36:29 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (6.7ms)
+  Rendered users/edit.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2018-09-21 08:37:16 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (5.2ms)
+  Rendered users/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:37:18 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Kl1Tym3egTyYD6/LTzCwqbdV2QtEPo/LkqLsxP+8Zm40ygedYdpNGXDpOe9mOWMG4zcdgaki4tUiMoj4C/yBQ==", "user"=>{"name"=>"Christopher Wood", "Username"=>"", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", ""], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (5.1ms)
+  Rendered users/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-21 08:37:24 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCcg Load (0.1ms)[0m  [1m[34mSELECT  "ccgs".* FROM "ccgs" WHERE "ccgs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at 2018-09-21 08:37:26 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.2ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (7.3ms)
+  Rendered users/edit.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/users/3" for 127.0.0.1 at 2018-09-21 08:37:27 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6HwKGGiB6Qmn8Sj777OnR3xqhLI7RWkJyCrzWL4hU7IAzvhmHLCsMhdfekXc/IVfGbz6hmkTHqaJ6vzRmeyV0A==", "user"=>{"name"=>"Christopher Wood", "Username"=>"", "password"=>"[FILTERED]", "ccg_ids"=>["", "5"]}, "commit"=>"Update User", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :ccg_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."Username" = ? AND "users"."id" != ? LIMIT ?[0m  [["Username", ""], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mCcg Load (0.3ms)[0m  [1m[34mSELECT "ccgs".* FROM "ccgs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ccgs"."id" FROM "ccgs" INNER JOIN "ccg_users" ON "ccgs"."id" = "ccg_users"."ccg_id" WHERE "ccg_users"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/_form.html.erb (7.8ms)
+  Rendered users/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 53ms (Views: 46.1ms | ActiveRecord: 1.1ms)
+
+

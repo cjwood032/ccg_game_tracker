@@ -26,7 +26,11 @@ class SessionsController < ApplicationController
           u.password = SecureRandom.hex
         end
         session[:user_id] = @user.id
-        redirect_to user_path(@user), notice: "Welcome back, and good luck!"
+        if @user.Username!=""&&@user.Username!=nil
+          redirect_to user_path(@user), notice: "Welcome back, and good luck!"
+        else
+          redirect_to edit_user_path(@user), notice: "Please give yourself a username!"
+        end
       end
 
       private
