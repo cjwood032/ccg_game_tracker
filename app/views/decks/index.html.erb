@@ -1,5 +1,6 @@
 <% if @user %>
-<%= render partial: 'decks/decks', locals: {user:@user, decks:@user.decks} %>
+    <%= link_to 'Decks with more wins than losses', decks_wlratio_path,class: "btn btn-primary btn-light" %>
+    <%= render partial: 'decks/decks', locals: {user:@user, decks:@user.decks} %>
 <%else%>
     <%= render partial: 'decks/decks', locals: {user:current_user, decks:current_user.decks} %>
 <%end%>
