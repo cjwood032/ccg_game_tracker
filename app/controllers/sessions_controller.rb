@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
           session[:user_id] = @user.id
           redirect_to user_path(@user), notice: "Welcome back, and good luck!"
         else
-            redirect_to signin_path
+            redirect_to signin_path, notice: "Name or password is incorrect"
         end
       end
 
@@ -40,6 +40,7 @@ class SessionsController < ApplicationController
       end
       
       def auth_hash
+        binding.pry
         request.env['omniauth.auth']
       end
 end
