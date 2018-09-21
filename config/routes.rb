@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#gcreate'
   post '/decks/:deck_id/games', to: "games#create_withdeck"
   get '/decks/wlratio', to: "decks#good"
-  get '/auth/:provider/callback', to: 'sessions#create'
+  #get '/auth/:provider/callback', to: 'sessions#create'
   resources :decks do
     resources :games
   end
