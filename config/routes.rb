@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get"/users/:id/decks_index", to: "users#decks_index"
   get '/auth/google_oauth2/callback' => 'sessions#gcreate'
   get '/auth/facebook/callback' => 'sessions#gcreate'
-  post '/decks/:deck_id/games', to: "games#create_withdeck"
+  post '/decks/:deck_id/games', to: "games#create"
   get '/decks/wlratio', to: "decks#good"
   #get '/auth/:provider/callback', to: 'sessions#create'
   resources :decks do

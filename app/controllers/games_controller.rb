@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    before_action :set_deck, only: [:create_withdeck, :index, :new]
+    before_action :set_deck, only: [:index, :new]
     def show
     end
     
@@ -29,19 +29,20 @@ class GamesController < ApplicationController
       @game=Game.find(params[:id])
     end
 
-    def create_withdeck
-      @game=Game.new(game_params)
-      @game.deck_id=@deck.id
-      @route="/decks/#{:deck_id}/games/new"
-      create
-    end
-
     def create
-      if !@game
+      #binding.pry
+      if params[:deck_id]!="nil"
+        set_deck
+        @game=Game.new(game_params)
+        @game.deck_id=@deck.id
+        @game.user_id=current_user.id
+        @route="/decks/#{@deck.id}/games/new"
+      elsif params[:action]=="create"
         @game=Game.new(game_params)
         @route="/games/new"
         @deck=Deck.find(id=@game.deck_id)
       end
+      binding.pry
       @game.user_id=current_user.id
       make_tags(@game)      
       respond_to do |format|
@@ -70,6 +71,7 @@ class GamesController < ApplicationController
         @deck=Deck.find_by_id(params[:deck_id])
       end
       def game_params
+        #binding.pry
         params.require(:game).permit(
         :user_id,
         :deck_id,
