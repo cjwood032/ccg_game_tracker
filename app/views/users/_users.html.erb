@@ -1,0 +1,8 @@
+<div class="info">
+    <%users.each do |user|%>
+        <td><%= link_to "#{user.Username}", user_path(user) %> </td>
+        <sm><%user.ccgs.each do |ccg|%>
+            <%=ccg.name%>
+            <%end%></sm><br>
+    <%end%>
+</div>

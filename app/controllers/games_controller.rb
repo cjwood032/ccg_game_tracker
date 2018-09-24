@@ -40,12 +40,13 @@ class GamesController < ApplicationController
         @game=Game.new(game_params)
         @route="/games/new"
         @deck=Deck.find(id=@game.deck_id)
+        @game.user_id=current_user.id
       else
         @decks=current_user.decks
         format.html { redirect_to '/games/new', notice: 'Game was not recorded, an unknown error occured.' }  
       end
 
-      @game.user_id=current_user.id
+      
       make_tags(@game)      
       respond_to do |format|
         if @game.save

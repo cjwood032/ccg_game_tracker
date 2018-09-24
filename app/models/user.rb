@@ -6,4 +6,11 @@ class User < ActiveRecord::Base
     has_many :decks
     has_many :ccg_users
     has_many :ccgs, through: :ccg_users
+    #scope :same, -> {where("user.games==currrent_user.games")}
+
+    def samegame(ccg)
+        User.all.select{ |user|
+            user!=self && user.ccgs.include?(ccg)
+        }
+    end
 end

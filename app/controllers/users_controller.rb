@@ -57,7 +57,11 @@ class UsersController < ApplicationController
     @user.destroy
     session[:user_id] = nil
     redirect_to root_url
-end
+  end
+  
+  def same
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
