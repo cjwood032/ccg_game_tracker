@@ -6,7 +6,7 @@ Users, once created, can make decks linked to the CCGs they play and then create
 
  
 
-##Installation 
+## Installation 
 
  Video: https://youtu.be/NiRl5sgtvSI
 
