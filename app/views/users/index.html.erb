@@ -1,8 +1,2 @@
-<div class="info">
-    <%User.all.each do |user|%>
-        <td><%= link_to "#{user.Username}", user_path(user) %> </td>
-        <sm><%user.ccgs.each do |ccg|%>
-            <%=ccg.name%>
-            <%end%></sm><br>
-    <%end%>
-</div>
+<%= link_to "Filter by CCGs you play!", users_same_path, class: "btn btn-primary btn-light" %>
+<%= render partial: 'users', locals: {users:User.all} %>
