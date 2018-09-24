@@ -6,7 +6,7 @@ Users, once created, can make decks linked to the CCGs they play and then create
 
  
 
-Installation 
+##Installation 
 
  Video: https://youtu.be/NiRl5sgtvSI
 
@@ -26,7 +26,7 @@ Installation
 
 The app is up and running! 
 
- # Contributing
+## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/cjwood032/ccg_game_tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
