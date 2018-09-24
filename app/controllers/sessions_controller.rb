@@ -40,7 +40,6 @@ class SessionsController < ApplicationController
       end
       
       def auth_hash
-        binding.pry
         request.env['omniauth.auth']
       end
 end

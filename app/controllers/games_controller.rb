@@ -42,7 +42,7 @@ class GamesController < ApplicationController
         @route="/games/new"
         @deck=Deck.find(id=@game.deck_id)
       end
-      binding.pry
+      #binding.pry
       @game.user_id=current_user.id
       make_tags(@game)      
       respond_to do |format|
