@@ -30,7 +30,6 @@ class GamesController < ApplicationController
     end
 
     def create
-      #binding.pry
       if params[:deck_id]!="nil"
         set_deck
         @game=Game.new(game_params)
@@ -41,8 +40,11 @@ class GamesController < ApplicationController
         @game=Game.new(game_params)
         @route="/games/new"
         @deck=Deck.find(id=@game.deck_id)
+      else
+        @decks=current_user.decks
+        format.html { redirect_to '/games/new', notice: 'Game was not recorded, an unknown error occured.' }  
       end
-      #binding.pry
+
       @game.user_id=current_user.id
       make_tags(@game)      
       respond_to do |format|
@@ -53,7 +55,6 @@ class GamesController < ApplicationController
             format.html { redirect_to @route, notice: 'Game was successfully recorded.' }
           else
             @decks=current_user.decks
-            @message="You need to select a result."
             format.html { redirect_to @route, notice: 'Game was not recorded, you need to select a result' }
         end
       end
@@ -70,8 +71,8 @@ class GamesController < ApplicationController
       def set_deck
         @deck=Deck.find_by_id(params[:deck_id])
       end
+
       def game_params
-        #binding.pry
         params.require(:game).permit(
         :user_id,
         :deck_id,
