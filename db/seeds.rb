@@ -31,7 +31,8 @@ DATA = {
     ["Magic Arena"],
     ["MTGO"],
     ["Pokemon"],
-    ["Shadowverse"]
+    ["Shadowverse"],
+    ["Artifact"]
   ],
   
   :game_keys => ["deck_id", "result"],
