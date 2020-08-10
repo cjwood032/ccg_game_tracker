@@ -1,18 +1,15 @@
-<div class="theme-showcase" role="main">
+
 
   
 
-  <div class="right-info">
-    <h1>Deck Tracker App</h1>
-    <div class="left-pic">
-    <img src="https://images.unsplash.com/photo-1519755886879-4e3381fe0cb7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=702d5b9e3ba11da1690358aac38bf795&auto=format&fit=crop&w=2897&q=80" width="350" height="325">
-  </div>
-    <div class="center">
-      <%= link_to "Sign In", signin_path, class: "btn btn-primary" %>
-      <%= link_to "Sign Up", new_user_path, class: "btn btn-primary" %><br>
-      <%= link_to('Log in with Google', '/auth/google_oauth2') %><br>
-      <%= link_to('Log in with Facebook', '/auth/facebook') %>
+  <div class="home">
+  <div class="home--header-box">
+    <h1 class="heading-primary">Deck Tracker App</h1>
+    
+    <div class="home--links">
+    <%= link_to "Sign in", signin_path, class:"btn btn--white" %>
+      <%= link_to "Sign Up", new_user_path, class: "btn btn--white" %>
+      <%= link_to('Log in with Google', '/auth/google_oauth2', class: "btn btn--white") %>
+    </div>
     </div>
   </div>
-
-</div>

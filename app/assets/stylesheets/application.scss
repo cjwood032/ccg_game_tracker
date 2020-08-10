@@ -10,32 +10,25 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+
  *= require_self
  */
+@import "./abstracts/variables";
+@import "./base/typography";
+@import "./components/button";
 
+
+@import "./layout/home";
+
+
+ /*
  html,
  body {
    margin: 0;
    padding: 0;
  }
  
- button {
-   margin: 0;
-   padding: 0;
-   border: 0;
-   background: none;
-   font-size: 100%;
-   vertical-align: baseline;
-   font-family: inherit;
-   font-weight: inherit;
-   color: inherit;
-   -webkit-appearance: none;
-   appearance: none;
-   -webkit-font-smoothing: antialiased;
-   -moz-font-smoothing: antialiased;
-   font-smoothing: antialiased;
- }
+ 
  
  body {
    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -47,14 +40,10 @@
    margin: 0 auto;
    -webkit-font-smoothing: antialiased;
    -moz-font-smoothing: antialiased;
-   font-smoothing: antialiased;
    font-weight: 300;
  }
  
- button,
- input[type="checkbox"] {
-   outline: black;
- }
+ 
  
  .hidden {
    display: none;
@@ -117,7 +106,6 @@
    box-sizing: border-box;
    -webkit-font-smoothing: antialiased;
    -moz-font-smoothing: antialiased;
-   font-smoothing: antialiased;
  }
  
  .new-deck {
@@ -144,7 +132,7 @@
    width: 60px;
    height: 34px;
    text-align: center;
-   border: none; /* Mobile Safari */
+   border: none; // Mobile Safari
  }
  
  .toggle-all:before {
@@ -193,13 +181,13 @@
  .todo-list li .toggle {
    text-align: center;
    width: 40px;
-   /* auto, since non-WebKit browsers doesn't support input styling */
+   // auto, since non-WebKit browsers doesn't support input styling 
    height: auto;
    position: absolute;
    top: 0;
    bottom: 0;
    margin: auto 0;
-   border: none; /* Mobile Safari */
+   border: none; // Mobile Safari 
    -webkit-appearance: none;
    appearance: none;
  }
@@ -403,10 +391,7 @@
 .popover__message {
   text-align: center;
 }
- /*
-   Hack to remove background from Mobile Safari.
-   Can't use it globally since it destroys checkboxes in Firefox
- */
+ //  Hack to remove background from Mobile Safari.   Can't use it globally since it destroys checkboxes in Firefox
  @media screen and (-webkit-min-device-pixel-ratio:0) {
    .toggle-all,
    .todo-list li .toggle {
@@ -434,3 +419,4 @@
      bottom: 10px;
    }
  }
+ */
