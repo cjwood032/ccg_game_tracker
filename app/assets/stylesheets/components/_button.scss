@@ -23,7 +23,7 @@
         }
     }
     &:active{
-        color: green;
+        color: $color-primary-dark;
     }
     &--white {
         color: $color-grey-dark;
@@ -31,6 +31,18 @@
         &::after{
             background-color: $color-primary-light;
         }
+    }
+        &--light {
+            
+            color: $color-grey-light;
+            background-color: $color-primary-light;
+            
+            
+    }
+    &--sm{
+        margin-top: 10px;
+        padding: 5px 40px !important;
+
     }
     &:after{
         content: "";
@@ -46,7 +58,4 @@
     }
     
   }
-  .icon{
-    margin-right: 5px;
-    float: left;
-}
+  

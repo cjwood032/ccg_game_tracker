@@ -15,10 +15,12 @@
  */
 @import "./abstracts/variables";
 @import "./base/typography";
-@import "./components/button";
 
+@import "./components/button";
+@import "./components/icon";
 
 @import "./layout/home";
+@import "./layout/navbar"
 
 
  /*

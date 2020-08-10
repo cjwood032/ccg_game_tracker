@@ -1,0 +1,12 @@
+.navbar{
+    position: relative;
+    height: 10vh;
+    width: 80vw;
+    background-color: $color-primary;
+    text-align: center;
+    &--brand{
+        font-size: 1.5rem;
+        font-family: 'Aclonica', sans-serif;
+        
+    }
+}
