@@ -9,7 +9,14 @@
     <div class="home--links">
     <%= link_to "Sign in", signin_path, class:"btn btn--white" %>
       <%= link_to "Sign Up", new_user_path, class: "btn btn--white" %>
-      <%= link_to('Log in with Google', '/auth/google_oauth2', class: "btn btn--white") %>
+      <div class="google-login">
+      
+      
+        <%= link_to('/auth/google_oauth2', class: "btn btn--white") do %>
+          <span class="btn-content"><%=image_tag "google.png", class: "icon"%>  Google Login</span>
+          <% end %>
+      
+      </div>
     </div>
     </div>
   </div>

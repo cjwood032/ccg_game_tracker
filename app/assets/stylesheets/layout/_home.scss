@@ -1,15 +1,15 @@
 .home{
-   height: 95vh;
+   height: 60vh;
    width: 80vw;
    background-image: linear-gradient(
     to right bottom,
     rgba($color-primary-light,0.8),
     rgba($color-primary-dark,0.8)),
-     url(https://image.shutterstock.com/z/stock-photo-moscow-russia-march-the-land-cards-of-game-magic-the-gathering-the-game-was-created-528708949.jpg);
+     url("Mtg_Background.jpg");
    background-size: cover;
    background-position: top;
    position: relative;
-   clip-path: polygon(0 0, 100% 0%, 100% 51%, 49% 100%, 0% 50%);
+   clip-path: polygon(0 0, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
 
    &--header-box{
       position: absolute;

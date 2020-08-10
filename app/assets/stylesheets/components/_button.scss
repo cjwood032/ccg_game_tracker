@@ -11,6 +11,9 @@
         color: $color-black;
 
     }
+    &:not(:last-child){
+        margin-bottom: 10px;
+    }
     &:hover{
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba($color-black,.2);
@@ -41,9 +44,9 @@
         z-index: -1;
         transition: all .4s;
     }
+    
   }
-
-  button,
- input[type="checkbox"] {
-   outline: black;
- }
+  .icon{
+    margin-right: 5px;
+    float: left;
+}
