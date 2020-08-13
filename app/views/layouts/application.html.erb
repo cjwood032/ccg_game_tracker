@@ -13,17 +13,66 @@
         
         
         <% if !logged_in? %>
-          <a class="navbar navbar--link navbar--brand" href="<%=new_user_path%>">Sign Up</a>
-          <a class="navbar navbar--link navbar--brand" href="<%= signin_path %>">Log In</a>
+          <a class="btn btn--light btn--sm navbar--brand" href="<%=new_user_path%>">Sign Up</a>
+          <a class="btn btn--light btn--sm navbar--brand" href="<%= signin_path %>">Log In</a>
         <% else %>
-          
-           <a class="btn btn--light btn--sm navbar--brand" href="<%= user_path(current_user) %>"/>Home</a>
-          <span class="navbar-login-info"><%=current_user.Username%> logged in</span>
-          <a class="btn btn--light btn--sm navbar--brand" data-method="delete" href="<%= signout_path %>">Log Out</a>
-        <%end%>
-      
-        <n id="notice"><i><%= notice %></i><br></n>
-        </div>
+        <div class="row">
+        <div class="navbar__login-info">
+            <span class="navbar__login-info__logon"><%=current_user.Username%> logged in</span>
+            <span class="navbar__login-info__alert" id="notice"><%= notice %></span>
+          </div>
+          <div class="mana">
+
+            <figure class="mana__figure">
+              <a href="<%= user_path(current_user) %>" >
+                <%= image_tag("W.svg", :alt=>"W", :class=>"mana__img") %>
+                <figcaption class="mana__text">Home</figcaption>
+              </a>
+
+            </figure>
+          </div>
+          <div class="mana">
+            <figure class="mana__figure">
+              <a href="#" >
+                <%= image_tag("U.svg", :alt=>"U", :class=>"mana__img") %>
+                <figcaption class="mana__text">Play</figcaption>
+              </a>
+
+            </figure>
+          </div>
+          <div class="mana">
+            <figure class="mana__figure">
+              <a href="#" >
+                <%= image_tag("B.svg", :alt=>"B", :class=>"mana__img") %>
+                <figcaption class="mana__text">Edit</figcaption>
+              </a>
+
+            </figure>
+          </div>
+          <div class="mana">
+            <figure class="mana__figure">
+              <a href="#" >
+                <%= image_tag("R.svg", :alt=>"R", :class=>"mana__img") %>
+                <figcaption class="mana__text">Browse</figcaption>
+              </a>
+
+            </figure>
+          </div>
+          <div class="mana">
+            <figure class="mana__figure">
+              <a data-method="delete" href="<%= signout_path %>">
+                <%= image_tag("G.svg", :alt=>"G", :class=>"mana__img") %>
+                <figcaption class="mana__text" >Logout</figcaption>
+              </a>
+
+            </figure>
+          </div>
+      </  div>
+
+          <%end%>
+
+
+          </div>
       </div>
     </div>
 

@@ -1,12 +1,27 @@
 .navbar{
+    color: $color-primary-light;
     position: relative;
-    height: 10vh;
+    height: 18vh;
     width: 80vw;
-    background-color: $color-primary;
+    background-color: $color-primary-dark;
     text-align: center;
     &--brand{
         font-size: 1.5rem;
         font-family: 'Aclonica', sans-serif;
         
+    }
+    &__login-info{
+        
+        width:15%;
+        padding: 1rem 0 0 1.5rem;
+        float: left;
+        text-align: center;
+        font-family: 'Aclonica', sans-serif;
+        &__logon{
+            font-size: $default-font-size;
+        }
+        &__alert{
+            font-size: 0.8rem;
+        }
     }
 }

@@ -13,9 +13,10 @@
 
  *= require_self
  */
+
 @import "./abstracts/variables";
 @import "./base/typography";
-
+@import "./components/mana";
 @import "./components/button";
 @import "./components/icon";
 
