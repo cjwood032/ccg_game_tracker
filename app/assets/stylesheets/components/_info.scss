@@ -1,0 +1,39 @@
+.info {
+    width: 80vw;
+    font-size: 2rem;
+    position: relative;
+    
+    &__user{
+        margin: 10px 0;
+        text-align: center;
+    }
+    &__title{
+        font-weight: 700;
+        color: $color-primary-dark;
+    }
+    &__subject{
+        font-size: 1.8rem;
+        color: $color-primary;
+    }
+    &__list{
+        
+        position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        font-size: 1.8rem;
+        color: $color-primary;
+        list-style-image: url("Mana_icon.png");
+        list-style-position: inside;
+        
+        margin: 0 auto;
+        &--title{
+            font-family: 'Aclonica', sans-serif;
+            margin-top: 3rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2rem;
+        
+        }
+    }
+}

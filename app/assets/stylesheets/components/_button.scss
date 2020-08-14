@@ -25,21 +25,18 @@
     &:active{
         color: $color-primary-dark;
     }
-    &--white {
+    &__white {
         color: $color-grey-dark;
         background-color: $color-white;
         &::after{
             background-color: $color-primary-light;
         }
     }
-        &--light {
-            
-            color: $color-grey-light;
-            background-color: $color-primary-light;
-            
-            
+    &__light {        
+        color: $color-grey-light;
+        background-color: $color-primary-light;          
     }
-    &--sm{
+    &__sm{
         margin-top: 10px;
         padding: 5px 40px !important;
 

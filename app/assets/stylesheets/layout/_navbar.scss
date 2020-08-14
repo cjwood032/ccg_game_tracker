@@ -1,7 +1,7 @@
 .navbar{
     color: $color-primary-light;
     position: relative;
-    height: 18vh;
+    height: 20vh;
     width: 80vw;
     background-color: $color-primary-dark;
     text-align: center;
@@ -12,7 +12,7 @@
     }
     &__login-info{
         
-        width:15%;
+        width:20%;
         padding: 1rem 0 0 1.5rem;
         float: left;
         text-align: center;
@@ -21,7 +21,9 @@
             font-size: $default-font-size;
         }
         &__alert{
-            font-size: 0.8rem;
+            color: #f00;
+            margin-top: 1.5rem;
+            font-size: 1rem;
         }
     }
 }

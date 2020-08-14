@@ -4,11 +4,11 @@
     <h1 class="heading-primary">Deck Tracker App</h1>
   
     <div class="home--links">
-      <%= link_to "Sign in", signin_path, class:"btn btn--white" %>
-      <%= link_to "Sign Up", new_user_path, class: "btn btn--white" %>
+      <%= link_to "Sign in", signin_path, class:"btn btn__white" %>
+      <%= link_to "Sign Up", new_user_path, class: "btn btn__white" %>
       <div class="google-login">
-        <%= link_to('/auth/google_oauth2', class: "btn btn--white") do %>
-          <span class="btn-content"><%=image_tag "google.png", class: "icon"%>  Google Login</span>
+        <%= link_to('/auth/google_oauth2', class: "btn btn__white") do %>
+          <span class="btn-content"><%=image_tag "google.png", class: "icon"%> Login</span>
           <% end %>
       </div>
     </div>
