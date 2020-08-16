@@ -13,7 +13,7 @@
     <div class="info__user"><span class="info__title">Username:</span><span class="info__subject"> <%= @user.Username %></span></div>
     <%if @user==current_user%>
     <div class="info__user"><span class="info__title">Name:</span><span class="info__subject"> <%= @user.name %></span></div>
-    <div class="info__user"><%= link_to 'Edit User', [:edit, @user], :class =>"btn btn--light" %></div>
+    <div class="info__user"><%= link_to 'Edit User', [:edit, @user], :class =>"btn btn__light" %></div>
     <%else%>
     <div class="info__user"><%= link_to "View #{@user.Username}'s decks",  "./#{@user.id}/decks_index"%></div>
 <%end%>

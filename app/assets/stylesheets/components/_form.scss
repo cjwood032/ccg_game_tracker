@@ -1,0 +1,12 @@
+.form{
+    font-size: $default_font_size;
+    background-color:$color-primary-light;
+    &-group__text{
+        display: inline-block;
+        color: $color-primary-dark;
+    }
+}
+.input{
+    background-color: $color-primary-dark;
+    font-size: 1.8rem;
+}

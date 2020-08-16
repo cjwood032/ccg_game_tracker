@@ -1,4 +1,5 @@
 <%= form_for @user do |f| %>
+  <div class="form">
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2>
@@ -13,29 +14,35 @@
       </div>
     <% end %>
   
-    <div class="form-group">
+    <div class="form-group__text">
       <%= f.label :name %>
-      <br>
       <%= f.text_field :name, class: "form-control" %>
     </div>
-    <div class="form-group">
+    <div class="form-group__text">
       <%= f.label :Username %>
-      <br>
       <%= f.text_field :Username, class: "form-control" %>
     </div>
   
-    <div class="form-group">
+    <div class="form-group__text">
       <%= f.label :password %>
-      <br>
       <%= f.password_field :password, class: "form-control" %>
-      <br></br>
-      
+    </div>
   
 
-    <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) %>
+    <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
+      <div class="row">
+    <%= c.label(class: "check_box") do %>
+      <div class="check_box_group">
+      <%= c.check_box(class: "check_box") %>
+      <%= c.object.name %>
+        
+      </div>     
+    <% end %>
+  </div>
+      <%end%>
     <div class="actions">
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn__light" %>
     </div>
     
-    
+  </div>
   <% end %>
