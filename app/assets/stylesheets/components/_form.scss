@@ -1,5 +1,6 @@
 .form{
-    width: 80vw;
+    width: 78vw;
+    padding-left: 2vw;
     font-size: $default_font_size;
     background-image: 
     linear-gradient(
@@ -32,7 +33,7 @@ input{
             height: 20px;
             top: 0;
             left: 0;
-            transform: translate(-3px, -3px);
+            transform: translate(-2px, -3.25px);
             //border: 2px solid $color-grey-dark;
             border-radius: 3px;
             background-color: $color-grey-light;
@@ -55,5 +56,16 @@ input{
             transform: translate(-1px, -1px);
         }
     }
+}
+.ccg_label{
+    display: inline-block;
+    max-width: 20%;
+    width: 15%;
+    &:not(:last-child){
+        margin-right: 5px;
+    }
+}
+.actions{
+    text-align: center;
 }
 

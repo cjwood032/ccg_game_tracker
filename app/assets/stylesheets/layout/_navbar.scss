@@ -1,9 +1,10 @@
 .navbar{
-    color: $color-primary;
+    color: $color-primary-dark-2;
     position: relative;
+    min-height: 112px;
     height: 20vh;
     width: 80vw;
-    background-color: rgba($color-black, .4);
+    background-color: rgba($color-primary-dark-2, .4);
     text-align: center;
     &--brand{
         font-size: 1.5rem;
@@ -21,7 +22,7 @@
             font-size: $default-font-size;
         }
         &__alert{
-            color: #f00;
+            color: $color-alert;
             margin-top: 1.5rem;
             font-size: 1rem;
         }

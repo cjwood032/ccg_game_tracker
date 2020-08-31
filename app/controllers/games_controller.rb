@@ -7,7 +7,7 @@ class GamesController < ApplicationController
         if @deck
           @games=current_user.games.where(deck: @deck).select{|g| g.created_at.today?}
         else
-          @games=current_user.games.select{|g| g.created_at.today?}
+          @games=current_user.games.select{|g| g.created_ at.today?}
         end
         @last_game=@games.last
         @games.reverse!  
@@ -30,8 +30,8 @@ class GamesController < ApplicationController
     end
 
     def create
-      if params[:deck_id]!="nil"
-        set_deck
+      if params[:deck_id]!=nil
+        get_deck
         @game=Game.new(game_params)
         @game.deck_id=@deck.id
         @game.user_id=current_user.id
@@ -71,6 +71,9 @@ class GamesController < ApplicationController
 
       def set_deck
         @deck=Deck.find_by_id(params[:deck_id])
+      end
+      def get_deck
+        @deck=Deck.find_by_id(params[:game][:deck_id])
       end
 
       def game_params

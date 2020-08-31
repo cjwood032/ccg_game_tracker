@@ -1,17 +1,16 @@
 .mana-container{
     width:80%;
     padding-left:20%; 
+    height: 100%
 }
 .mana{
     width: 15%;
     margin: 0 auto;
-    margin-top: 10vh;
-    transform: translateY(-50%);
+    //margin-top: 10vh;
+    transform: translateY(15%);
     display: inline-block;
     
-    //border-radius: 3px;
-    //padding: 6rem;
-    //padding-left: 9rem;
+    
     font-size: $default-font-size;
     &__figure{
         margin: 0 0;
