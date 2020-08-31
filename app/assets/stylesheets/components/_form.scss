@@ -1,12 +1,59 @@
 .form{
+    width: 80vw;
     font-size: $default_font_size;
-    background-color:$color-primary-light;
+    background-image: 
+    linear-gradient(
+        to right bottom,
+        rgba($color-primary-light,0.8),
+        rgba($color-primary-dark,0.8)),
+    url("mtg_hand2.jpeg");
     &-group__text{
         display: inline-block;
-        color: $color-primary-dark;
+        color: $color-primary-dark-2;
     }
 }
-.input{
+input{
+    max-width: 15vw;
+    color: $color-grey-light;
     background-color: $color-primary-dark;
-    font-size: 1.8rem;
+    font-size: $default_font_size;
+    
+    &:focus{
+        background-color: $color-primary-dark-2;
+    }
+    &.check_box{
+        position: relative;
+        
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: 0;
+            transform: translate(-3px, -3px);
+            //border: 2px solid $color-grey-dark;
+            border-radius: 3px;
+            background-color: $color-grey-light;
+            background-image: radial-gradient($color-white, rgb(112,223,255));
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+        }
+        &::after{
+            display: none;
+        }
+        &:checked::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+           
+            background-image: url("Mana_icon.png");
+            background-repeat: no-repeat;
+            position: absolute;
+            transform: translate(-1px, -1px);
+        }
+    }
 }
+

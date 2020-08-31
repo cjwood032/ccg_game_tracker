@@ -1,9 +1,9 @@
 .navbar{
-    color: $color-primary-light;
+    color: $color-primary;
     position: relative;
     height: 20vh;
     width: 80vw;
-    background-color: $color-primary-dark;
+    background-color: rgba($color-black, .4);
     text-align: center;
     &--brand{
         font-size: 1.5rem;

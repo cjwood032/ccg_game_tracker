@@ -4,17 +4,19 @@
 }
 .mana{
     width: 15%;
-    margin: 1.6rem auto;
+    margin: 0 auto;
+    margin-top: 10vh;
+    transform: translateY(-50%);
     display: inline-block;
     
-    border-radius: 3px;
+    //border-radius: 3px;
     //padding: 6rem;
     //padding-left: 9rem;
     font-size: $default-font-size;
     &__figure{
         margin: 0 0;
-        width: 6rem;
-        height: 6rem;
+        width: 80%; //6rem
+        
 
         shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);

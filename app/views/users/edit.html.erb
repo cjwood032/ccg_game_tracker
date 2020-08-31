@@ -1,5 +1,5 @@
         <form action="delete" method="POST">
-        <div class="row"><h2>Edit User</h2> - <input type="submit" value="Delete User" class="btn btn__white"></div>
+        <div class="header"><h2>Edit User</h2> - <input type="submit" value="Delete User" class="btn btn__danger"></div>
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
                 <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
         </form>

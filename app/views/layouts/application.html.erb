@@ -9,15 +9,20 @@
   </head>
   <body>
     <div class="navbar main-nav" role="navigation">
+    <div class="bg-video">      
+          <%= video_tag "bg.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "bg-video__content" %>      
+      </div>
       <div class="info">
-        
+      
         
         <% if !logged_in? %>
           <a class="btn btn__light btn__sm navbar__brand" href="<%=new_user_path%>">Sign Up</a>
           <a class="btn btn__light btn__sm navbar__brand" href="<%= signin_path %>">Log In</a>
         <% else %>
         <div class="row">
+        
         <div class="navbar__login-info">
+        
             <div class="navbar__login-info__logon"><%=current_user.Username%> logged in</div>
             <div class="navbar__login-info__alert" id="notice"><%= notice %></div>
           </div>

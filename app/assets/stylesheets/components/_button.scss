@@ -32,14 +32,24 @@
             background-color: $color-primary-light;
         }
     }
+    &__danger {
+        color: $color-grey-light;
+        background-color: $color-alert;
+        &::after{
+            background-color: $color-primary-light;
+        }
+    }
     &__light {        
         color: $color-grey-light;
         background-color: $color-primary-light;          
     }
+    &__dark {        
+        color: $color-grey-light;
+        background-color: $color-primary-dark;          
+    }
     &__sm{
         margin-top: 10px;
         padding: 5px 40px !important;
-
     }
     &:after{
         content: "";

@@ -31,17 +31,17 @@
 
     <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
       <div class="row">
-    <%= c.label(class: "check_box") do %>
-      <div class="check_box_group">
+    <%= c.label(class: "ccg_label") do %>
+      
       <%= c.check_box(class: "check_box") %>
       <%= c.object.name %>
         
-      </div>     
+         
     <% end %>
   </div>
       <%end%>
     <div class="actions">
-      <%= f.submit class: "btn btn__light" %>
+      <%= f.submit class: "btn btn__dark" %>
     </div>
     
   </div>
