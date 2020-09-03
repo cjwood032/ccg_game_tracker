@@ -14,8 +14,27 @@ $color-black: #000;
 $color-mana-w:rgb(248, 246, 216);;
 $color-mana-u: rgb(193, 215, 233);
 $color-mana-b: rgb(186, 177, 171);
-$color-mana-r: rgb(228, 153, 119);
+$color-mana-r: rgb(207, 140, 124);
 $color-mana-g: rgb(163, 219, 149);
+//Old MTG card colors
+$color-card-w-old:rgb(193,180,146);
+$color-card-u-old-light: rgb(78,167,183);
+$color-card-u-old-dark: rgb(68,74,108);
+$color-card-b-old: rgb(23,24,19);
+$color-card-r-old: rgb(141,69,55);
+$color-card-g-old:  rgb(61,96,76);
+$color-card-a-old: rgb(158,76,38);
+$color-card-w-new: rgb(234,231,222);
+$color-card-u-new-light: rgb(200,225,230);
+$color-card-u-new-dark: rgb(85,126,192);
+$color-card-b-new-light: rgb(140,132,111);
+$color-card-b-new-dark: rgb(28,28,30);
+$color-card-r-new-light: rgb(222,140,102);
+$color-card-r-new-dark: rgb(169,59,34);
+$color-card-g-new-light:  rgb(163,160,129);
+$color-card-g-new-dark:  rgb(58,74,25);
+
+$color-card-a-new: rgb(195,201,199);
 
 
 $default-font-size: 1.6rem;

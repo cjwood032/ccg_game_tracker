@@ -1,19 +1,10 @@
-<strong>Play a game! </strong> 
-<p><%= link_to 'View Games', games_path %></p>
-
-
 <% if @deck %>
-    <p><%= link_to 'Use a different deck', new_game_path %></p>
     <%= render 'deckform'%>
 <%else%>
     <%if current_user.decks.length>0%>
         <%= render 'form'%>
     <%else%>
-        <n>You need a deck to play a game!</n>
+        <p>You need a deck to play a game!</p>
         <%= link_to 'New Deck', new_deck_path(current_user) %>
     <%end%>
 <%end%>
-
- 
-
-

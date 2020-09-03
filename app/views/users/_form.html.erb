@@ -13,22 +13,22 @@
         </ul>
       </div>
     <% end %>
-  <div class="row">
-    <div class="form-group__text">
+  <div class="row form-group">
+    <div class="form-group form-group__text">
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
     </div>
-    <div class="form-group__text">
+    <div class="form-group form-group__text">
       <%= f.label :Username %>
       <%= f.text_field :Username, class: "form-control" %>
     </div>
   
-    <div class="form-group__text">
+    <div class="form-group form-group__text">
       <%= f.label :password %>
       <%= f.password_field :password, class: "form-control" %>
     </div>
   </div>
-<div class="check_boxes">
+<div class="form-group check_boxes">
     <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
       
     <%= c.label(class: "ccg_label") do %>

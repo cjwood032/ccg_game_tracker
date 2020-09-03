@@ -7,7 +7,7 @@ class GamesController < ApplicationController
         if @deck
           @games=current_user.games.where(deck: @deck).select{|g| g.created_at.today?}
         else
-          @games=current_user.games.select{|g| g.created_ at.today?}
+          @games=current_user.games.select{|g| g.created_at.today?}
         end
         @last_game=@games.last
         @games.reverse!  
@@ -31,32 +31,40 @@ class GamesController < ApplicationController
 
     def create
       if params[:deck_id]!=nil
-        get_deck
+        #binding.pry
+        set_deck
         @game=Game.new(game_params)
         @game.deck_id=@deck.id
         @game.user_id=current_user.id
         @route="/decks/#{@deck.id}/games/new"
-      elsif params[:action]=="create"
+      elsif params[:action]=="create"&& params[:game][:deck_id]!=""
+        #binding.pry
         @game=Game.new(game_params)
         @route="/games/new"
         @deck=Deck.find(id=@game.deck_id)
         @game.user_id=current_user.id
       else
-        @decks=current_user.decks
-        format.html { redirect_to '/games/new', notice: 'Game was not recorded, an unknown error occured.' }  
+          #binding.pry
+          @route="/games/new"
+          @decks=current_user.decks
       end
-
-      
-      make_tags(@game)      
       respond_to do |format|
-        if @game.save
-            @deck.record_game(@game.result)
-            @game=Game.new
-            @decks=current_user.decks
-            format.html { redirect_to @route, notice: 'Game was successfully recorded.' }
-          else
-            @decks=current_user.decks
-            format.html { redirect_to @route, notice: 'Game was not recorded, you need to select a result' }
+        if (!!@game)
+          make_tags(@game)      
+        
+          if @game.save
+              @deck.record_game(@game.result)
+              @game=Game.new
+              @decks=current_user.decks
+              format.html { redirect_to @route, notice: 'Game was successfully recorded.' }
+            else
+              @decks=current_user.decks
+              format.html { redirect_to @route, notice: 'Game was not recorded, you need to select a result' }
+          end
+        
+        else 
+          @decks=current_user.decks
+          format.html { redirect_to @route, notice: 'Game was not recorded, you need to select a result' }
         end
       end
     end
