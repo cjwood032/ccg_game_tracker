@@ -5,9 +5,10 @@
 }
 .mana{
     width: 15%;
+    height: 100%;
     margin: 0 auto;
-    //margin-top: 10vh;
-    transform: translateY(15%);
+    top: 50%;
+    //transform: translateY(-10%);
     display: inline-block;
     
     
@@ -15,8 +16,8 @@
     &__figure{
         margin: 0 0;
         width: 80%; //6rem
-        
-
+        top: 50%;
+        transform: translateY(-50%);
         shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
        
@@ -26,6 +27,7 @@
         }
        
     }
+    
     &__text {
         position: absolute;
         top: 50%;

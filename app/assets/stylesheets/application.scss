@@ -13,11 +13,12 @@
 
  *= require_self
  */
-
+@import "./abstracts/mixins";
 @import "./abstracts/variables";
 
 @import "./base/base";
 @import "./base/typography";
+@import "./base/utilities";
 
 @import "./components/bg-video";
 @import "./components/mana";
@@ -27,6 +28,7 @@
 
 @import "./components/info";
 
+@import "./layout/grid";
 @import "./layout/header";
 @import "./layout/home";
 @import "./layout/navbar"

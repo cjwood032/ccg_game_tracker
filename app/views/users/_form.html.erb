@@ -13,21 +13,24 @@
         </ul>
       </div>
     <% end %>
-  <div class="row form-group">
-    <div class="form-group form-group__text">
+  <div class="row">
+    <div class="col-1-of-3">
+      
       <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control" %>
+      <%= f.text_field :name, class: "form__input" %>
+    
     </div>
-    <div class="form-group form-group__text">
+    <div class="col-1-of-3">
       <%= f.label :Username %>
-      <%= f.text_field :Username, class: "form-control" %>
+      <%= f.text_field :Username, class: "form__input" %>
     </div>
   
-    <div class="form-group form-group__text">
+    <div class="col-1-of-3"> 
       <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
+      <%= f.password_field :password, class: "form__input" %>
     </div>
   </div>
+  <div class="row">
 <div class="form-group check_boxes">
     <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
       
@@ -44,5 +47,6 @@
       <%= f.submit class: "btn btn__dark btn__lg" %>
     </div>
     
+  </div>
   </div>
   <% end %>
