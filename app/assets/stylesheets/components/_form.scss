@@ -84,13 +84,14 @@ select,
         background-color: $color-card-u-new-light;
 }
 input,
-:not(input[type="submit"]),
 textarea{
+    &,
+    &:not(input[type="submit"]){
     max-width: 34vw;
     color: $color-card-w-old;
     background-color: $color-card-w-new;
     font-size: $default_font_size;
-    
+    }
     &:focus{
         background-color: $color-card-w-new;
     }

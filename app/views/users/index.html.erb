@@ -1,2 +1,4 @@
-<%= link_to "Filter by CCGs you play!", users_same_path, class: "btn btn-primary btn-light" %>
-<%= render partial: 'users', locals: {users:User.all} %>
+<div class="u-margin-top-md">
+    <%= link_to "Filter by CCGs you play!", users_same_path, class: "btn btn__blue" %>
+    <%= render partial: 'users', locals: {users:User.all} %>
+</div>

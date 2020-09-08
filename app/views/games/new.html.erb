@@ -4,7 +4,7 @@
     <%if current_user.decks.length>0%>
         <%= render 'form'%>
     <%else%>
-        <p>You need a deck to play a game!</p>
-        <%= link_to 'New Deck', new_deck_path(current_user) %>
+        <h2 class="header u-alert-text">You need a deck to play a game! <%= link_to 'New Deck', new_deck_path(current_user) %></h2>
+        
     <%end%>
 <%end%>

@@ -5,12 +5,13 @@
     <div class="form u-center-text">
         <div class="form-group header">Deck: <%=@deck.name%>&nbsp;<%= link_to 'Use a different deck', new_game_path, class: "btn btn__green"%></div>
         <div class="form-group form-group__radio">
-        <label class="form__label form__label__static">Result:</label>
+            <label class="form__label form__label__static">Result:</label>
             <%= g.radio_button(:result, "Win",:class=>"game-win") %>
             <%= label_tag(:game_result_win, "Win",:class=>"radio radio__game-win") %>
             <%= g.radio_button(:result, "Loss", :class=>"game-loss") %>
             <%= label_tag(:game_result_loss, "Loss",:class=>"radio radio__game-loss") %>
         </div>
+        
         <div class="header u-margin-bot-md">Optional</div>
         <div class="row">
           <div class="col-1-of-2 form-group__textarea">
@@ -38,7 +39,7 @@
         
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
             <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
-        <input class: "btn btn-primary" type="submit" value="Record Game" >
+        <input class= "btn btn__white" type="submit" value="Record Game" >
     
     </div>
 <%end%>

@@ -1,61 +1,73 @@
-<strong>Play a game! </strong>
+<div class="game">
+    <h2 class="header">Play a game! </h2>
+    <% if @deck %>
+        <%= link_to 'Play Games!', new_deck_game_path(@deck), class: "btn btn__green" %>
+    <%else%>
+        <%= link_to 'Play Games!', new_game_path, class: "btn btn__green" %>
+    <%end%>
+    <% if @games%>
+        <table>
+        <tr>
+        <th class="game__header game__header__deck">Deck</th>
+        <th class="game__header game__header__result">W/L</th>
+        <th class="game__header game__header__tags">Tags</th>
+        <th class="game__header game__header__comments">Comments</th>
+        </tr>
+            <%@games.each do |game| %>     
+                <% if game==@last_game%>
+                        <form action="/games/delete" method="POST"><input class="btn btn__danger" type="submit" value="Delete Most Recent Game">
+                            <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+                            <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+                        </form>
 
-
-<% if @deck %>
-<p><%= link_to 'Play Games!', new_deck_game_path(@deck) %></p>
-<%else%>
-    <p><%= link_to 'Play Games!', new_game_path %></p>
-<%end%>
-<% if @games%>
-    <%@games.each do |game| %> 
-        <div>
-        <% if game==@last_game%>
-            <td>
-                <form action="/games/delete" method="POST"><input type="submit" value="Delete Most Recent Game">
-                    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-                    <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
-                </form>
-                <%if game.deck%>
-                    <td><%= link_to "#{game.deck.name}", game_path(game) %> :  </td>
-                    <div class="popover__wrapper">                    
-                        <h4 class="popover__title"><%=game.result %></h4>
-                        <div class="push popover__content">
-                            <p class="popover__message">
+                        <%if game.deck%>
+                            <td class="game__deck"><%= link_to "#{game.deck.name}", game_path(game), class: "game__deck game__deck_link" %></td>
+                            <%if (game.result=="Win") %>
+                                <td class="game__result game__result_win">W</td>
+                            <%else%>
+                                <td class="game__result game__result_loss">L</td>
+                            <%end%>
+                            <td class="game__tags">
+                                <%game.tags.each do |tag|%>
+                                    <%=tag.name%>
+                                <%end%>
+                            </td>
+                            <td class="game__comments">
+                                <%if game.comment%>
+                                    <%=game.comment%>
+                                <%end%>
+                            </td>
+                        <%else%>
+                            Deck was deleted: <%=game.result %> 
+                        <%end%>
+                <%else%>
+                    <%if game.deck%>
+                    <tr>
+                        <td class="game__deck"><%= link_to "#{game.deck.name}", game_path(game), class: "game__deck game__deck_link" %></td>
+                        <%if (game.result=="Win") %>
+                            <td class="game__result game__result_win">W</td>
+                        <%else%>
+                            <td class="game__result game__result_loss">L</td>
+                        <%end%>
+                        <td class="game__tags">
                             <%game.tags.each do |tag|%>
                                 <%=tag.name%>
                             <%end%>
+                        </td>
+                        <td class="game__comments">
                             <%if game.comment%>
                                 <%=game.comment%>
-                            <%end%></p>
-                        </div>
-                    </div>
-                <%else%>
-                    <td>Deck was deleted: <%=game.result %> </td>
+                            <%end%>
+                        </td>
+                    <%else%>
+                        Deck was deleted: <%=game.result %> 
+                    <%end%>
+                    </tr>
                 <%end%>
-            </td>
-
-        <%else%>
-            <%if game.deck%>
-                <td><%= link_to "#{game.deck.name}", game_path(game) %> :  </td>
-                <div class="popover__wrapper">                    
-                    <h4 class="popover__title"><%=game.result %></h4>
-                    <div class="push popover__content">
-                        <p class="popover__message">
-                        <%game.tags.each do |tag|%>
-                            <%=tag.name%>
-                        <%end%>
-                        <%if game.comment%>
-                            <%=game.comment%>
-                        <%end%></p>
-                    </div>
-                </div>
-            <%else%>
-                <td>Deck was deleted: <%=game.result %> </td>
+                        
             <%end%>
-        <%end%>
-        </div>
+        </table>
     <%end%>
-<%end%>
- 
+</div>
 
 

@@ -1,7 +1,7 @@
 .deck {
     font-size: $default-font-size;
     color: $color-card-a-new;
-    height: 75vh;
+    //height: 80vh;
     background-image: radial-gradient(rgba($color-card-r-new-light, .6),rgba($color-card-r-new-dark, .7)),
     url("mtg_decks.jpg");
     &__links{
