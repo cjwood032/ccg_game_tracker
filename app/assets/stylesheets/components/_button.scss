@@ -1,4 +1,5 @@
-.btn {
+.btn{
+
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -29,7 +30,43 @@
         color: $color-card-w-old;
         background-color: $color-card-w-new;
         &::after{
-            background-color: $color-card-w-old;;
+            background-color: $color-card-w-old;
+        }
+    }
+    
+    &__blue {
+        color: $color-card-u-new-dark;
+        background-color: $color-card-u-new-light;
+        &::after{
+            background-color: $color-card-u-new-light;
+        }
+    }
+    &__black {
+        color: $color-card-b-new-dark;
+        background-color: $color-card-b-new-light;
+        &::after{
+            background-color: $color-card-b-new-light;
+        }
+    }
+    &__red {
+        color: $color-card-r-new-dark;
+        background-color: $color-card-r-new-light;
+        &::after{
+            background-color: $color-card-r-new-light;
+        }
+    }
+    &__green {
+        color: $color-card-g-new-dark;
+        background-color: $color-card-g-new-light;
+        &::after{
+            background-color: $color-card-g-new-light;
+        }
+    }
+    &__art {
+        color: $color-card-a-old;
+        background-color: $color-card-a-new;
+        &::after{
+            background-color: $color-card-a-new;
         }
     }
     &__danger {
@@ -72,3 +109,80 @@
 
 
   
+  input[type="submit"].btn{
+      appearance: none;
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 8px 20px;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all 0.2s;
+        position: relative;
+        //color: $color-black;
+    }
+    &:after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    &__white {
+        color: $color-card-w-old;
+        background-color: $color-card-w-new;
+        &::after{
+            background-color: $color-card-w-old;
+        }
+    }
+    
+    &__blue {
+        color: $color-card-u-new-dark;
+        background-color: $color-card-u-new-light;
+        &::after{
+            background-color: $color-card-u-new-light;
+        }
+    }
+    &__black {
+        color: $color-card-b-new-dark;
+        background-color: $color-card-b-new-light;
+        &::after{
+            background-color: $color-card-b-new-light;
+        }
+    }
+    &__red {
+        color: $color-card-r-new-dark;
+        background-color: $color-card-r-new-light;
+        &::after{
+            background-color: $color-card-r-new-light;
+        }
+    }
+    &__green {
+        color: $color-card-g-new-dark;
+        background-color: $color-card-g-new-light;
+        &::after{
+            background-color: $color-card-g-new-light;
+        }
+    }
+    &__art {
+        color: $color-card-a-old;
+        background-color: $color-card-a-new;
+        &::after{
+            background-color: $color-card-a-new;
+        }
+    }
+    &__danger {
+        color: $color-grey-light;
+        background-color: $color-alert;
+        &::after{
+            background-color: $color-primary-light;
+        }
+    }
+  }

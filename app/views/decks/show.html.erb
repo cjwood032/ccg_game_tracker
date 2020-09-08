@@ -1,22 +1,26 @@
 
 
-<div class="center">
+<div class="deck">
     <% if current_user.id==@deck.user_id %>
-        <%= link_to 'Edit Deck', [:edit, @deck] %>
+        <%= link_to 'Edit Deck', [:edit, @deck], class: "btn btn__red" %>
     <%end%>
-    <div class="info">
-        <p><strong>Deck Name:</strong> <%= @deck.name %></p>
-        <p><strong>Game:</strong> <%= @deck.ccg.name %></p>
-        <p><strong>Wins:</strong> <%= @deck.wins %></p>
-        <p><strong>Losses:</strong> <%= @deck.losses %></p>
-        <% if @deck.link != nil %>
-            <p><strong>Link:</strong> <br><a href=<%=@deck.link%> target="_blank" ><%=@deck.short_link%></a></p>
+    
+        <div class="deck__name">Deck Name: <%= @deck.name %></div>
+        <div class="deck__ccg">Game: <%= @deck.ccg.name %></div>
+        <div class="deck__wins">Wins: <%= @deck.wins %></div>
+        <div class="deck__losses">Losses: <%= @deck.losses %></div>
+        <% if @deck.link != "" %>
+            <div class = "deck__link">Link: <a href=<%=@deck.link%> target="_blank" ><%=@deck.short_link%></a></div>
         <%end%>
-        <b>Tags:</b><br>
+        Tags:
+        <ul class="tags">
         <%@tags.each do |tag| %>
-            <%= tag.name%>:<%= @tags.count(tag) %><br>
+            <li class="row"><%= tag.name%>:<%= @tags.count(tag) %></li>
         <%end%>
-        <p><%= link_to 'Play some Games!', deck_games_path(@deck.id) %></p>
-        <%= link_to 'Back to decks list', decks_path,class: "btn btn-primary btn-light" %>
-    </div>
+        </ul>
+        <div class="row deck__links">
+        <%= link_to 'Play some Games!', deck_games_path(@deck.id), class: "btn btn__green" %>
+        <%= link_to 'Back to decks list', decks_path,class: "btn btn__black" %> 
+        </div>
+    
 </div>

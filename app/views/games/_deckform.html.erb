@@ -2,14 +2,8 @@
 
 <%= form_for [@deck, @game] do |g| %>
   
-    <div class="form">
-
-
-    
-        Deck:
-        <a><b><%=@deck.name%></a></b>
-        <p><%= link_to 'Use a different deck', new_game_path %></p>
-        
+    <div class="form u-center-text">
+        <div class="form-group header">Deck: <%=@deck.name%>&nbsp;<%= link_to 'Use a different deck', new_game_path, class: "btn btn__green"%></div>
         <div class="form-group form-group__radio">
         <label class="form__label form__label__static">Result:</label>
             <%= g.radio_button(:result, "Win",:class=>"game-win") %>
@@ -17,19 +11,20 @@
             <%= g.radio_button(:result, "Loss", :class=>"game-loss") %>
             <%= label_tag(:game_result_loss, "Loss",:class=>"radio radio__game-loss") %>
         </div>
-        <div class="header">Optional</div>
-        <div class="row form-group">
-          <div class="form-group form-group__textarea">
+        <div class="header u-margin-bot-md">Optional</div>
+        <div class="row">
+          <div class="col-1-of-2 form-group__textarea">
           <%= g.text_area :comment, class: "form__input", placeholder: "Comments" %>
           <%= g.label :Comments, class: "form__label" %>
           </div>
-        <div class="form-group form-group__text">
+        <div class="col-1-of-2 form-group__text">
             <%= g.text_field :opponent_deck, class: "form__input", :placeholder =>"Opponent's deck"%>
             <%= g.label :opponent_deck, "Opponent's deck", class: "form__label" %>
         </div>
         </div>
         
-                <div class="header">Tags</div>
+                <div class="row header u-margin-bot-sm">Tags</div>
+                <div class="row">
         <%= g.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |c| %>
         <%= c.label(class: "ccg_label ccg_label__sm") do %>
         
@@ -39,7 +34,7 @@
 
           <% end %>
             <%end%>
-        
+        </div>
         
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
             <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>

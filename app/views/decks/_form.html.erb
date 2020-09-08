@@ -1,23 +1,28 @@
 <%= form_for(@deck) do |d| %>
-
-    <div class="form-group">
-      <%= d.label :name %><br>
-      <%= d.text_field :name, class: "form-control" %><br><br></div>
-  
-    <div class="form-group">
-        <%= d.label :ccg, "Card Game" %>
-        <div class="field"><%= d.label :ccg, "Select the CCG" %><br>
-            <%= d.collection_select(:ccg_id, current_user.ccgs, :id, :name) %><br><br>
-    </div>
+  <div class="u-center-text">
+  <div class="row  u-margin-top-md">
+    <div class="col-1-of-2 form-group form-group__text">
       
-    <div class="form-group">
-      <%= d.label :link, "Optional Link to the deck" %><br>
-        <%= d.text_field :link, class: "form-control" %></div>
+      <%= d.text_field :name, class: "form__input", placeholder: "Name" %>
+      <%= d.label :name, class: "form__label" %>
     </div>
   
-    
-    <div class="actions">
-      <%= d.submit class: "btn btn-primary" %>
+    <div class=" col-1-of-2 form-group form-group__select">
+        <%= d.label :ccg, "Card Game", class:"form__label form__label__static"  %>
+        
+            <%= d.collection_select(:ccg_id, current_user.ccgs, :id, :name) %>
+    </div>
+  </div>
+  <div class="row u-margin-top-sm">
+    <div class="col-1-of-2 form-group form-group__text">
+        <%= d.text_field :link, class: "form__input", placeholder: "Optional link to the deck" %>
+        <%= d.label :link, "Optional link to the deck", class: "form__label" %>
+    </div>
+      <div class ="col-1-of-2 form-group">
+        <%= d.submit class: "btn btn__white" %>
+      </div>
     </div>
     
-  <% end %>
+  </div>
+  </div>
+<% end %>

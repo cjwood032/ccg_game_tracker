@@ -1,6 +1,9 @@
-<h1>Edit</h1>
-<%= render 'form' %>
-<form action="delete" method="POST"><input type="submit" value="Delete Deck">
-<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-        <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
-</form>
+<div class="form">
+<form class="u-center-text" action="delete" method="POST"><h2 class="header" >Edit</h2> - <input type="submit" value="Delete Deck", class="btn btn__danger">
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+                <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+        </form>
+        
+        <%= render 'form' %>
+        
+</div>

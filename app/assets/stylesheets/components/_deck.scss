@@ -1,0 +1,14 @@
+.deck {
+    font-size: $default-font-size;
+    color: $color-card-a-new;
+    height: 75vh;
+    background-image: radial-gradient(rgba($color-card-r-new-light, .6),rgba($color-card-r-new-dark, .7)),
+    url("mtg_decks.jpg");
+    &__links{
+        text-align: right;
+    }
+}
+.tags{
+    font-size:1.4rem;
+    list-style: none;
+}

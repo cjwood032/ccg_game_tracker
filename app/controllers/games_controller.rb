@@ -10,7 +10,17 @@ class GamesController < ApplicationController
           @games=current_user.games.select{|g| g.created_at.today?}
         end
         @last_game=@games.last
-        @games.reverse!  
+        @games.reverse!
+        #binding.pry
+        if (@games.length==0)
+          respond_to do |format|
+            if(!!@deck)
+              format.html { redirect_to new_deck_game_path, notice: 'No recent games' }
+            else
+              format.html { redirect_to new_game_path, notice: 'No recent games' }
+            end
+          end
+        end
     end
 
     def new
@@ -31,20 +41,17 @@ class GamesController < ApplicationController
 
     def create
       if params[:deck_id]!=nil
-        #binding.pry
         set_deck
         @game=Game.new(game_params)
         @game.deck_id=@deck.id
         @game.user_id=current_user.id
         @route="/decks/#{@deck.id}/games/new"
       elsif params[:action]=="create"&& params[:game][:deck_id]!=""
-        #binding.pry
         @game=Game.new(game_params)
         @route="/games/new"
         @deck=Deck.find(id=@game.deck_id)
         @game.user_id=current_user.id
       else
-          #binding.pry
           @route="/games/new"
           @decks=current_user.decks
       end

@@ -1,2 +1,3 @@
-<h2> Your decks that have more wins than losses<h2>
-<%= render partial: 'decks/decks', locals: {user:current_user, decks:current_user.decks.wlratio} %>
+<div class="deck"> <h2 class="header u-margin-bot-sm">Decks with more wins than losses</h2>
+    <%= render partial: 'decks/decks', locals: {user:current_user, decks:current_user.decks.wlratio} %>
+</div>
