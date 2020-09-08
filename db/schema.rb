@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_09_05_215345) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ccg_users", force: :cascade do |t|
     t.integer "ccg_id"
     t.integer "user_id"
@@ -32,6 +35,11 @@ ActiveRecord::Schema.define(version: 2018_09_05_215345) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "decktags", force: :cascade do |t|
+    t.integer "deck_id"
+    t.integer "tag_id"
   end
 
   create_table "game_tags", force: :cascade do |t|

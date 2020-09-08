@@ -9,9 +9,9 @@
 
 DATA = {
   :user_keys =>
-    ["name", "password"],
+    ["name", "Username","password"],
   :users => [
-    ["chris", "password"]
+    ["chris", "chris", "password"]
   ],
   :deck_keys =>
     ["name", "user_id", "ccg_id", "wins", "losses", "link"],
