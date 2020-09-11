@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       end
     
       def create
-        @user = User.find_or_create_by(auth_hash)
+        @user = User.find_by(Username: params[:Username])
         current_user = @user
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
@@ -22,15 +22,20 @@ class SessionsController < ApplicationController
 
       def gcreate
         @user = User.find_or_create_by(uid: auth['uid']) do |u|
-          u.name = auth['info']['name']
-          u.password = SecureRandom.hex
+          if(u.id==nil)
+            u.name = auth['info']['name']
+            u.password = SecureRandom.hex
+            u.Username=u.name
+            u.save
+            session[:user_id] = u.id
+            redirect_to edit_user_path(u), notice: "Please set a password\nand pick some ccgs!"
+          else
+            session[:user_id] = u.id
+            redirect_to user_path(u), notice: "Welcome back, and good luck!"
+          end
+          
         end
-        session[:user_id] = @user.id
-        if @user.Username!=""&&@user.Username!=nil
-          redirect_to user_path(@user), notice: "Welcome back, and good luck!"
-        else
-          redirect_to edit_user_path(@user), notice: "Please give yourself a username!"
-        end
+        
       end
 
       private
