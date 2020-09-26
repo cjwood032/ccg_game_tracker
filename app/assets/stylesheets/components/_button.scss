@@ -92,6 +92,11 @@
         margin-top: 10px;
         padding: 10px 20px !important;
     }
+    &__disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        display: none !important;
+    }
     &:after{
         content: "";
         display: inline-block;
@@ -185,4 +190,5 @@
             background-color: $color-primary-light;
         }
     }
+    
   }
