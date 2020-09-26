@@ -1,0 +1,23 @@
+<div class="game">
+    <table>
+        <tr>
+            <th>user</th>
+            <th>ccgs</th>
+        </tr>
+        <%users.each do |user|%>
+            <tr>
+            <td><%= link_to "#{user.Username}", user_path(user) %> </td>
+            <td>
+                <%user.ccgs.each do |ccg|%>
+
+                    <%if (ccg==user.ccgs.last) %>
+                        <%=ccg.name%>
+                    <%else%>
+                        <%=ccg.name%>,
+                    <%end%>
+                <%end%>
+            </td>
+        </tr>
+        <%end%>
+    </table>
+</div>

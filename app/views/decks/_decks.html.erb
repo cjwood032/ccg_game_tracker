@@ -1,0 +1,17 @@
+
+<div class="row deck__links">
+  <% if user!=current_user %>
+    <%= link_to "Back to profile", user_path(user), :class => "btn btn__blue" %>
+    <% else %>
+    <%= link_to 'Decks with more wins than losses', decks_wlratio_path,class: "btn btn__black" %>
+      <%= link_to 'New Deck', new_deck_path, class: "btn btn__blue" %>
+  <% end %>
+  <%= link_to 'Play some Games!', games_path, class: "btn btn__green" %>
+</div>
+
+<div class="header u-margin-bot-sm u-center-text"> <%=user.Username%>'s Decks </div>
+<% decks.each do |deck| %>
+    <div class="row">
+      <%= link_to "#{deck.name}", deck_path(deck), class: "btn btn__art"   %>
+    </div>
+  <% end %>

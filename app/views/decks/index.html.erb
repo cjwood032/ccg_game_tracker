@@ -1,0 +1,7 @@
+<div class="deck">
+    <% if @user %>
+        <%= render partial: 'decks/decks', locals: {user:@user, decks:@user.decks} %>
+    <%else%>
+        <%= render partial: 'decks/decks', locals: {user:current_user, decks:current_user.decks} %>
+    <%end%>
+</div>

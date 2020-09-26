@@ -1,0 +1,5 @@
+<%current_user.ccgs.each do |ccg|%>
+    <%=ccg.name%>
+    <%@users = current_user.samegame(ccg)%>
+    <%= render partial: 'users', locals: {users:@users} %>
+<%end%>

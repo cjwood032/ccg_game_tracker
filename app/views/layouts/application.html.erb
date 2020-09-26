@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CCG Tracker</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="navbar main-nav" role="navigation">
+    <div class="bg-video">      
+          <%= video_tag "bg.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "bg-video__content" %>      
+      </div>
+      <div class="info">
+      
+        
+        <% if !logged_in? %>
+          <a class="btn btn__light btn__sm navbar__brand" href="<%=new_user_path%>">Sign Up</a>
+          <a class="btn btn__light btn__sm navbar__brand" href="<%= signin_path %>">Log In</a>
+        <% else %>
+        
+        
+        <div class="navbar__login-info">
+        
+            <div class="navbar__login-info__logon"><%=current_user.Username%> logged in</div>
+            <div class="navbar__login-info__alert" id="notice"><%= notice %></div>
+          </div>
+          <div class="mana-container">
+            <div class="mana">
+              <figure class="mana__figure">
+                <a href="<%= user_path(current_user) %>" >
+                  <%= image_tag("W.svg", :alt=>"W", :class=>"mana__img") %>
+                  <figcaption class="mana__text">Home</figcaption>
+                </a>
+              </figure>
+            </div>
+            <div class="mana">
+              <figure class="mana__figure">
+                <a href="<%=games_path%>" >
+                  <%= image_tag("U.svg", :alt=>"U", :class=>"mana__img") %>
+                  <figcaption class="mana__text">Play</figcaption>
+                </a>
+              </figure>
+            </div>
+            <div class="mana">
+              <figure class="mana__figure">
+                <a href="<%=decks_path%>" >
+                  <%= image_tag("B.svg", :alt=>"B", :class=>"mana__img") %>
+                  <figcaption class="mana__text">Decks</figcaption>
+                </a>
+              </figure>
+            </div>
+            <div class="mana">
+              <figure class="mana__figure">
+                <a href="<%=users_path%>" >
+                  <%= image_tag("R.svg", :alt=>"R", :class=>"mana__img") %>
+                  <figcaption class="mana__text">Browse</figcaption>
+                </a>
+              </figure>
+            </div>
+            <div class="mana">
+              <figure class="mana__figure">
+                <a data-method="delete" href="<%= signout_path %>">
+                  <%= image_tag("G.svg", :alt=>"G", :class=>"mana__img") %>
+                  <figcaption class="mana__text" >Logout</figcaption>
+                </a>
+              </figure>
+            
+          </div>
+      </div>
+
+          <%end%>
+
+
+          </div>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="body"  role="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>
