@@ -32,6 +32,7 @@ DATA = {
     ["MTGO"],
     ["Pokemon"],
     ["Shadowverse"],
+    ["Snap"],
     ["Artifact"]
   ],
   
