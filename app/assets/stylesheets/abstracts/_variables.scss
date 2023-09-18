@@ -1,13 +1,3 @@
-$color-primary:#8955c5;
-$color-primary-light:#b590ca;
-$color-primary-dark: #6a00e4;
-$color-primary-dark-2: #4800c2;
-$color-grey-dark: #777;
-$color-grey-light: #F7F7F7;
-$color-alert: #CC003d;
-$color-white: #fff;
-$color-black: #000;
-
 
 
 //Mana symbol colors
@@ -42,3 +32,14 @@ $default-font-size: 1.6rem;
 $grid-width: 114rem;
 $gutter-vertical: 4 rem;
 $gutter-horizontal: 3rem;
+//other colors
+$color-primary: $color-mana-r;
+$color-primary-light: $color-mana-b;
+$color-primary-dark: $color-card-r-old;
+$color-primary-dark-2: $color-card-b-old;
+$color-grey-dark: #777;
+$color-grey-light: #F7F7F7;
+$color-alert: #CC003d;
+$color-white: #fff;
+$color-black: #000;
+
