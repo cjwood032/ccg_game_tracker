@@ -172,10 +172,11 @@ textarea{
             width: 20px;
             height: 20px;
            
-            background-image: url("https://w0.pngwave.com/png/516/138/magic-the-gathering-guildpact-dissension-ravnica-masques-block-symbol-png-clip-art.png");
+            background-image: url("phyrexia.png");
+            background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            position: absolute;
+            //position: relative;
             transform: translate(-2px, -3.25px);
         }
     }
@@ -186,9 +187,9 @@ textarea{
     width: 25%;
     height: 1.5rem;
     text-align: left;
-    &:not(:last-child){
+    //&:not(:last-child){
         margin-right: .75rem;
-    }
+    //}
     &__sm{
         font-size: 1.2rem;
         font-weight: 700;

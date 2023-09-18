@@ -1,5 +1,5 @@
 <%= form_for @user do |f| %>
-  <div class="form">
+  <div >
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2>
@@ -19,22 +19,18 @@
       <%= f.label :name %>
       <%= f.text_field :name, class: "form__input" %>
     
-    </div>
-    <div class="col-1-of-3">
+   
       <%= f.label :Username %>
       <%= f.text_field :Username, class: "form__input" %>
-    </div>
-  
-    <div class="col-1-of-3"> 
+    
       <%= f.label :password %>
       <%= f.password_field :password, class: "form__input" %>
     </div>
-  </div>
-  <div class="row">
-<div class="form-group check_boxes">
+  
+<div class="form-group col-2-of-3 check_boxes">
     <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
       
-    <%= c.label(class: "ccg_label") do %>
+    <%= c.label(class: "col-1-of-3 ccg_label") do %>
       
       <%= c.check_box(class: "check_box") %>
       <%= c.object.name %>
