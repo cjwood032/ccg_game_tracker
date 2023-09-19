@@ -1,11 +1,12 @@
 .navbar{
     background-image: linear-gradient(
-    to right,
+    to left,
     rgba($color-card-w-new,0.8),
     rgba($color-card-g-new-dark,0.9));
     position: relative;
-    min-height: 5vh;
-    height: 25vh;
+    min-height: 15vh;
+    max-height: 25vh;
+    
     width: 80vw;
     //background-color: rgba($color-card-b-old, .6);
     text-align: center;
