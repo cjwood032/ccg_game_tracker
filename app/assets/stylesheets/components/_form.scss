@@ -16,9 +16,9 @@
         
         font-size: 1.5rem;
         font-family: inherit;
-        color:$color-card-b-old;
+        color:$color-card-b-new-dark;
         //padding: 1.5rem 2rem;
-        background-color: rgba($color-card-w-old, .7);
+        background-color: rgba($color-card-b-old, .7);
         border:none;
         border-bottom: 3px solid transparent;
         width: 100%;
@@ -88,7 +88,7 @@ textarea{
     &,
     &:not(input[type="submit"]){
     max-width: 34vw;
-    color: $color-card-w-old;
+    color: $color-card-b-new-dark;
     background-color: $color-card-w-new;
     font-size: $default_font_size;
     }

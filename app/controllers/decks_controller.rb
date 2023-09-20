@@ -56,12 +56,16 @@ class DecksController < ApplicationController
     def set_deck
         @deck=Deck.find(params[:id])
     end
+    def set_colors
+        @colors = Colors.new()
+    end
 
     def deck_params
         params.require(:deck).permit(
             :name,
             :ccg_id,
-            :link
+            :link,
+            :color
         )
     end
 end

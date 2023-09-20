@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
             u.Username=u.name
             u.save
             session[:user_id] = u.id
-            redirect_to edit_user_path(u), notice: "Please set a password\nand pick some ccgs!"
+            redirect_to edit_user_path(u), notice: "Please set a password\nand pick some formats you play!"
           else
             session[:user_id] = u.id
             redirect_to user_path(u), notice: "Welcome back, and good luck!"

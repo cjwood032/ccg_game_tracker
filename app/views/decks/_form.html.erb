@@ -8,12 +8,17 @@
     </div>
   
     <div class=" col-1-of-2 form-group form-group__select">
-        <%= d.label :ccg, "Card Game", class:"form__label form__label__static"  %>
+        <%= d.label :ccg, "Format", class:"form__label form__label__static"  %>
         
             <%= d.collection_select(:ccg_id, current_user.ccgs, :id, :name) %>
     </div>
   </div>
   <div class="row u-margin-top-sm">
+    <div class = "col-1-of-2">
+    <%= d.label :ccg, "Colors", class:"form__label form__label__static"  %>
+        
+    <%= d.select(:color, Deck.colors.keys.map {|color| [color,color]}) %>
+    </div>
     <div class="col-1-of-2 form-group form-group__text">
         <%= d.text_field :link, class: "form__input", placeholder: "Optional link to the deck" %>
         <%= d.label :link, "Optional link to the deck", class: "form__label" %>

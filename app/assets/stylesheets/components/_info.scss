@@ -17,14 +17,15 @@
         color: $color-primary;
     }
     &__list{
-        
+        background-size: 1px;
+        background-repeat: none;
         position: absolute;
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
         font-size: 1.8rem;
         color: $color-primary;
-        list-style-image: url("Mana_icon.png");
+        list-style-image: url("dissension.png");
         list-style-position: inside;
         
         margin: 0 auto;
