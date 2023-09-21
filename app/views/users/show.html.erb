@@ -18,7 +18,7 @@
     <div class="info__user"><%= link_to "View #{@user.Username}'s decks",  "./#{@user.id}/decks_index"%></div>
 <%end%>
     <div class="info__list">
-      <div class="info__list--title">CCGs:</div> <% @user.ccg_ids.uniq.each do |g| %>
+      <div class="info__list--title">Formats played:</div> <% @user.ccg_ids.uniq.each do |g| %>
         <ul>
           <li class="info__list--item"><%=Ccg.find(g).name%></li>
         </ul>
