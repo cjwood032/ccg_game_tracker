@@ -43,3 +43,12 @@ $color-alert: #CC003d;
 $color-white: #fff;
 $color-black: #000;
 
+$top-ug: 37%;
+$top-br: 78%;
+$top-w: 4%;
+$left-u: 70%;
+$left-g: calc(100% - #{$left-u});
+$left-b: 65%;
+$left-r: calc(100% - #{$left-b});
+$left-w: 50%;
+$mana-button-width: 7.5vw;

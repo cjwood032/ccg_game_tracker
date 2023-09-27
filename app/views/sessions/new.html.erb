@@ -1,5 +1,10 @@
+ 
  <%= form_tag(signin_path, method: "post") do %>
-  <input type="text" name="Username" placeholder="Username:">
-  <input type="password" name="password" placeholder="Password:">
+  <div class="row">
+    <input type="text" name="Username" placeholder="Username:">
+  </div>
+  <div class="row">
+    <input type="password" name="password" placeholder="Password:">
+  </div>
   <%= submit_tag "Sign In", :class => "btn btn__green btn__sm" %>
 <% end %>
