@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, :html =>{:class => 'form form__signup'} do |f| %>
   <div >
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -30,7 +30,7 @@
 <div class="form-group col-2-of-3 check_boxes">
     <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
       
-    <%= c.label(class: "col-1-of-3 ccg_label") do %>
+    <%= c.label(class: "col-1-of-2 ccg_label") do %>
       
       <%= c.check_box(class: "check_box") %>
       <%= c.object.name %>

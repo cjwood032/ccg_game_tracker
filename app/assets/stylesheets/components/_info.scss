@@ -1,7 +1,7 @@
 .info {
-    width: 80vw;
-    font-size: 2rem;
-    position: relative;
+    //width: 80vw;
+    //font-size: 2rem;
+    //position: relative;
     height: 100%;
     
     &__user{
@@ -10,32 +10,36 @@
     }
     &__title{
         font-weight: 700;
-        color: $color-card-a-old;
+        color: $color-card-a-new;
     }
     &__subject{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         color: $color-card-b-old;
     }
     &__list{
         
-        position: absolute;
+        position: relative;
             top: 100%;
             left: 50%;
             transform: translate(-50%);
-        font-size: 2.5rem;
+        font-size: 2rem;
+        //text-align: center;
         color: $color-card-b-new-dark;
         list-style-image: url("ala.svg");
-        list-style-position: inside;
+        list-style-position: outside;
         line-height: 2.75rem;
         
         //margin: 10 auto;
         &--title{
             font-family: 'Aclonica', sans-serif;
-            margin-top: 3rem;
+            margin: 1rem 0;
             text-align: center;
-            font-weight: 700;
-            font-size: 2.75rem;
+            
         
+        }
+        &--item{
+            position: inherit;
+            vertical-align: top;
         }
         
         

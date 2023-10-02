@@ -1,8 +1,8 @@
 .home{
    display: inherit;
-   position: inherit;
-   left: calc(50% - #{$mana-button-width});
-   
+   position: fixed;
+   left: calc(50% - #{$mana-button-width} * 1.25);
+   top: $top-ug;
     //width: 80vw;
    // background-image: linear-gradient(
    //  to right bottom,
@@ -16,9 +16,10 @@
 
    &--header-box{
      
-      width: calc(#{$mana-button-width} * 2);
+      width: calc(#{$mana-button-width} * 3);
       margin-left: calc(#{$mana-button-width} / 4);
       position: inherit;
+
       //align-items: center;
    }
 }

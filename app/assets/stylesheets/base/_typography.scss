@@ -28,3 +28,9 @@ h2{
     display: inline-block;
     margin: 0;
 }
+ul {
+    //display: inline;
+    columns: 20vw 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }

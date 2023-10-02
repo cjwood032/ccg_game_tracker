@@ -21,9 +21,9 @@
     
 }
 .application {
-    position: absolute;
+    position: relative;
     display: inline-block;
-    top: 40%;
+    top: 20%;
     left: $left-g;
     width: calc(2 * #{$left-u} - 100%);
     //transform: translate(-50%);
