@@ -119,6 +119,8 @@
   
   input[type="submit"].btn{
       appearance: none;
+      //margin-left: 5%;
+      width: calc(2 * #{$mana-button-width});
     &,
     &:link,
     &:visited {

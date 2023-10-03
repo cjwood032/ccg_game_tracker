@@ -1,48 +1,34 @@
-<%= form_for @user, :html =>{:class => 'form form__signup'} do |f| %>
-  <div >
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
-        </h2>
-  
-        <ul>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <div class="row">
-    <div class="col-1-of-3">
-      
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form__input" %>
-    
-   
-      <%= f.label :Username %>
-      <%= f.text_field :Username, class: "form__input" %>
-    
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form__input" %>
+      </ul>
     </div>
-  
-<div class="form-group col-2-of-3 check_boxes">
-    <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
-      
-    <%= c.label(class: "col-1-of-2 ccg_label") do %>
-      
-      <%= c.check_box(class: "check_box") %>
-      <%= c.object.name %>
+  <% end %>
+  <div class="row">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form__input" %>
+    <%= f.label :Username %>
+    <%= f.text_field :Username, class: "form__input" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form__input" %>
+  </div>
+  <div class = "row">
+    <div class="form-group__check-boxes">
+      <%= f.collection_check_boxes(:ccg_ids, Ccg.all, :id, :name) do |c| %>
+        <%= c.label(class: "col-1-of-3 ccg_label ccg_label__checkbox") do %>
+          <%= c.check_box(class: "check_box") %>
+          <%= c.object.name %>
         
-         
-    <% end %>
-      <%end%>
-      </div>
-    <div class="actions">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="actions">
       <%= f.submit class: "btn btn__dark btn__lg" %>
     </div>
-    
-  </div>
-  </div>
-  <% end %>
+<% end %>
