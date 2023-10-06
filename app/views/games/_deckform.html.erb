@@ -40,6 +40,8 @@
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
             <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
         <input class= "btn btn__white" type="submit" value="Record Game" >
-    
+        <button class= "showButton"  value="Show optional fields" >
+        
     </div>
 <%end%>
+<%= button_tag "Do It", type: 'button', onclick: "showGameOptions()", class: 'btn btn-default' %>

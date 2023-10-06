@@ -28,7 +28,7 @@ form{
         transform: translate(-33%);
         left: $left-w;
     }
-    &__signup{
+    &__user{
         width: 30vw;
         left: $left-b;
         transform: translate(-40%);
@@ -93,7 +93,7 @@ form{
             //position: absolute;
         }
         &__check-boxes{
-            margin: 5vh 0;
+            margin: 3vh 0;
         }
         &:not(:last-child){
             margin-bottom: 1rem;
@@ -123,7 +123,7 @@ textarea{
         background-color: $color-card-w-new;
     }
     &[type="radio"] {
-        display: none;
+        display: none !important;
         & + label{
             cursor: pointer;
             //min-width: 60px;
@@ -176,7 +176,7 @@ textarea{
             position: absolute;
             width: 20px;
             height: 20px;
-            
+            top:1vh;
             left: 0;
             
             //border: 2px solid $color-grey-dark;
@@ -212,7 +212,10 @@ textarea{
     }
 }
 .ccg_label{
-    display: block;
+    display: flex;
+    position: relative;
+    list-style-type: none;
+    line-height: 3vh;
     //max-width: 50%;
     //width: 25%;
     //height: 1.5rem;

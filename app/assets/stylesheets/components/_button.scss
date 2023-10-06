@@ -145,6 +145,10 @@
         z-index: -1;
         transition: all .4s;
     }
+    &__center {
+        margin-left: $left-w;
+        transform: translate(-50%);
+    }
     &__white {
         color: $color-card-w-old;
         background-color: $color-card-w-new;

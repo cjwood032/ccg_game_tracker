@@ -20,14 +20,14 @@
         
         position: relative;
             top: 100%;
-            left: 50%;
+            left: 54%;
             transform: translate(-50%);
-        font-size: 2rem;
+        font-size: 2vw;
         //text-align: center;
         color: $color-card-b-new-dark;
         list-style-image: url("ala.svg");
         list-style-position: outside;
-        line-height: 2.75rem;
+        line-height: 2.75vh;
         
         //margin: 10 auto;
         &--title{

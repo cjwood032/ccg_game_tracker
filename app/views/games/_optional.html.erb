@@ -1,0 +1,21 @@
+<%= button_tag "Optional", type: 'button', onclick: "showGameOptions()", class: 'btn', id: "modalButton" %>
+<div class="modal" id="optionalModal">    
+    <div class="header u-margin-bot-md">Optional</div>
+        <div class="row form-group__textarea">
+            <%= g.text_area :comment, class: "form__input", placeholder: "Comments" %>
+            <%= g.label :Comments, class: "form__label" %>
+        </div>
+        <div class="row form-group__text">
+            <%= g.text_field :opponent_deck, class: "form__input", :placeholder =>"Opponent's deck"%>
+            <%= g.label :opponent_deck, "Opponent's deck", class: "form__label" %>
+        </div>
+    <div class="row header u-margin-bot-sm">Tags</div>
+    <div class="row">
+        <%= g.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |c| %>
+            <%= c.label(class: "ccg_label") do %>
+                <%= c.check_box(class: "check_box") %>
+                <%= c.object.name %>
+            <% end %>
+        <%end%>
+    </div>
+</div>
