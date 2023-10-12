@@ -1,7 +1,5 @@
-<div class="form">
-    <div class="row u-center-text">
-        <h2 class="header">New Deck</h2>
-    </div>
+<div class="form form__deck">
+    <h2 class="header">New Deck</h2>
     <%if current_user.ccgs.length>0%>
         <%= render 'form' %>
     <%else%>

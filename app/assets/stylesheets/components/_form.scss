@@ -34,6 +34,13 @@ form{
         transform: translate(-40%);
         position: relative;
     }
+    &__deck
+    {
+        width: 20vw;
+        left: calc(#{$left-w} + 5%);
+        transform: translate(-50%);
+        position: relative;
+    }
     &__input{
         
         font-size: 1.5rem;
@@ -49,14 +56,14 @@ form{
     }
     &__label{
         font-size: 1.4rem;
-        top: 0;
+        
         //display: block;
         font-weight: 700;
-        margin-right: 2rem;
+        margin-right: 1rem;
         &:not(&__static){
-            transform: translateY(-3rem);
+            transform: translate(3rem, -2rem);
             position: absolute;
-            left: 0;
+            left: -6vw;
             transition: all 0.3s;
             width: 20rem;
         }
@@ -66,9 +73,9 @@ form{
     }
     &__input:placeholder-shown + &__label{
         opacity: 0;
-
+        left: -1vw;
         visibility: hidden;
-        transform: translateX(-3rem);
+        
     }
     &-group{
         //margin-top: 2rem;

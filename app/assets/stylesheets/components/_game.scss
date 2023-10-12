@@ -5,6 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     font-size: $default-font-size;
+    overflow: auto;
 
     &__header{
         color: $color-card-a-old;
