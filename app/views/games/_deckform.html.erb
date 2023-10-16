@@ -11,37 +11,10 @@
             <%= g.radio_button(:result, "Loss", :class=>"game-loss") %>
             <%= label_tag(:game_result_loss, "Loss",:class=>"radio radio__game-loss") %>
         </div>
-        
-        <div class="header u-margin-bot-md">Optional</div>
-        <div class="row">
-          <div class="col-1-of-2 form-group__textarea">
-          <%= g.text_area :comment, class: "form__input", placeholder: "Comments" %>
-          <%= g.label :Comments, class: "form__label" %>
-          </div>
-        <div class="col-1-of-2 form-group__text">
-            <%= g.text_field :opponent_deck, class: "form__input", :placeholder =>"Opponent's deck"%>
-            <%= g.label :opponent_deck, "Opponent's deck", class: "form__label" %>
-        </div>
-        </div>
-        
-                <div class="row header u-margin-bot-sm">Tags</div>
-                <div class="row">
-        <%= g.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |c| %>
-        <%= c.label(class: "ccg_label ccg_label__sm") do %>
-        
-            <%= c.check_box(class: "check_box") %>
-            <%= c.object.name %>
-
-
-          <% end %>
-            <%end%>
-        </div>
-        
+        <%= render 'optional', g: g %>
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
             <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
-        <input class= "btn btn__white" type="submit" value="Record Game" >
-        <button class= "showButton"  value="Show optional fields" >
+            <input class= "btn btn__white btn__center" type="submit" Id="submitGame" value="Record Game" >
         
     </div>
 <%end%>
-<%= button_tag "Do It", type: 'button', onclick: "showGameOptions()", class: 'btn btn-default' %>
